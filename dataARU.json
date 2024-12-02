@@ -1,0 +1,14 @@
+[
+  {
+    "id": 13,
+    "week": "WK45",
+    "date": "11/17",
+    "status": "IN PROGRESS",
+    "automationTriggered": "Not yet",
+    "batsTriggered": "Not Yet",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613954",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-12347", "txn-67892", "txn-11225", "txn-44558", "txn-77881"]
+  }
+]

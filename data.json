@@ -1,0 +1,62 @@
+[
+  {
+    "id": 23,
+    "week": "WK48",
+    "date": "11/29",
+    "status": "IN PROGRESS",
+    "automationTriggered": "Not yet",
+    "batsTriggered": "Not Yet",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613946",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"]
+  },
+  {
+    "id": 22,
+    "week": "WK48",
+    "date": "11/28",
+    "status": "FAILED",
+    "automationTriggered": "N",
+    "batsTriggered": "N",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613946",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-22334", "txn-33445"]
+  },
+  {
+    "id": 21,
+    "week": "WK48",
+    "date": "11/27",
+    "status": "SUCCESS",
+    "automationTriggered": "Y",
+    "batsTriggered": "Y",
+    "batsResult": "Passed",
+    "txnLink": "https://orareview.us.oracle.com/149613946",
+    "lrgReportLink": "https://lrg.oracle.com/802b38bc-b393-4b2d-8982-a30bb317e904",
+    "transactions": ["txn-55667", "txn-66778", "txn-77889"]
+  },
+  {
+    "id": 20,
+    "week": "WK47",
+    "date": "11/25",
+    "status": "FAILED",
+    "automationTriggered": "N",
+    "batsTriggered": "N",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613947",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-99112", "txn-10121"]
+  },
+  {
+    "id": 19,
+    "week": "WK47",
+    "date": "11/24",
+    "status": "SUCCESS",
+    "automationTriggered": "Y",
+    "batsTriggered": "Y",
+    "batsResult": "Passed",
+    "txnLink": "https://orareview.us.oracle.com/149613948",
+    "lrgReportLink": "https://lrg.oracle.com/902c48ac-d394-4c3d-9873-b31cc317f905",
+    "transactions": ["txn-21345", "txn-32345", "txn-43567"]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 18,
+    "week": "WK47",
+    "date": "11/23",
+    "status": "IN PROGRESS",
+    "automationTriggered": "Not yet",
+    "batsTriggered": "Not Yet",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613949",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-12346", "txn-67891", "txn-11224", "txn-44557", "txn-77880"]
+  },
+  {
+    "id": 17,
+    "week": "WK46",
+    "date": "11/22",
+    "status": "FAILED",
+    "automationTriggered": "N",
+    "batsTriggered": "N",
+    "batsResult": "NA",
+    "txnLink": "https://orareview.us.oracle.com/149613950",
+    "lrgReportLink": "NA",
+    "transactions": ["txn-22335", "txn-33446"]
+  },
+  {
+    "id": 16,
+    "week": "WK46",
+    "date": "11/21",
+    "status": "SUCCESS",
+    "automationTriggered": "Y",
+    "batsTriggered": "Y",
+    "batsResult": "Passed",
+    "txnLink": "https://orareview.us.oracle.com/149613951",
+    "lrgReportLink": "https://lrg.oracle.com/802c38bd-b393-4b2d-8982-a30bb317e905",
+    "transactions": ["txn-55668", "txn-66779", "txn-77890"]
+  }
+]
