@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLM PIM Deployment Tracker Edit</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Edit</h1>
+    <div id="editContainer">
+      <form>
+        <label for="depl-status"  style="border-style: solid; color: blue;">Deployment Status</label>
+        <select id="deplStatus" name="depl-status">
+            <option value="deployed">Deployed</option>
+            <option value="inProgress">In Progress</option>
+            <option value="failed">Failed</option>
+        </select>
+        <br/>
+
+        <label for="automation-trig"  style="border-style: solid; color: blue;">Automation Triggered</label>
+        <select id="autoTrig" name="automation-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-trig"  style="border-style: solid; color: blue;">Bats Triggered</label>
+        <select id="batsTrig" name="bats-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-pass-fail"  style="border-style: solid; color: blue;">Bats Passed/Failed</label>
+        <select id="batsPassFail" name="bats-pass-fail">
+            <option value="Passed">Passed</option>
+            <option value="Failed">Failed</option>
+            <option value="NA">NA</option>
+        </select>
+        
+        <br/>
+
+        <label for="consolidatedTxnLink"  style="border-style: solid; color: blue;">Consolidated Txn Link</label>
+        <input type="text" id="consolidatedTxnLink" name="consolidatedTxnLink" 
+               style="width: 60%; height: 40px; font-size: 16px;"></input>
+        
+        <br/>
+        <div style="padding-top: 10px;"></div>
+
+        <label for="lrg-report-link"  style="border-style: solid; color: blue;">LRG Report Link</label>
+        <input type="text" id="lrgReportLink" name="lrg-report-link" 
+                style="width: 65%; height: 40px; font-size: 16px;"></input>
+
+        <br/>
+        <div style="padding-top: 20px;"></div>
+
+        <div id="transactions-container">
+            <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
+            <div id="transactions-inputs"></div>
+        </div>
+
+        <div id="env-links-container">
+            <label style="border-style: solid; color: blue;">Environment Links</label>
+            <div id="env-links-inputs"></div>
+        </div>
+
+        <div id="bats-report-container">
+            <label style="border-style: solid; color: blue;">BATS Report</label>
+            <div id="pim-plm-disposition-container"></div>
+        </div>
+        
+        <div id="product-name-container">
+            <label style="border-style: solid; color: blue;">Product Name Report</label>
+            <table id="product-name-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <!-- Table will be populated dynamically -->
+            </table>
+        </div>
+
+      </form>
+    </div>
+  </body>
+  <script>
+async function fetchDeploymentInfo(deploymentId) {
+    const response = await fetch(`/api/deployments/${deploymentId}`);
+    if (!response.ok) {
+        throw new Error("Object not found");
+    }
+    return response.json();
+}
+
+function populateDropdown(elementId, value) {
+    const dropdown = document.getElementById(elementId);
+    if (dropdown) dropdown.value = value;
+}
+
+function populateTextInput(elementId, value) {
+    const input = document.getElementById(elementId);
+    if (input) input.value = value;
+}
+
+function populateTransactionInputs(transactions) {
+    const container = document.getElementById("transactions-inputs");
+    if (container) {
+        transactions.forEach((transaction, index) => {
+            const input = document.createElement("input");
+            input.type = "text";
+            input.id = `transaction-${index}`;
+            input.name = `transaction-${index}`;
+            input.value = transaction;
+            Object.assign(input.style, {
+                width: "65%",
+                height: "20px",
+                fontSize: "16px",
+                marginBottom: "10px",
+            });
+            container.appendChild(input);
+        });
+    }
+}
+
+function populateEnvironmentLinks(envLinks) {
+    const container = document.getElementById("env-links-inputs");
+    if (container) {
+        Object.entries(envLinks).forEach(([key, value]) => {
+            const inputContainer = document.createElement("div");
+            inputContainer.style.marginBottom = "10px";
+
+            const label = document.createElement("label");
+            label.htmlFor = key;
+            label.innerText = key.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase());
+            label.style.display = "block";
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.id = key;
+            input.name = key;
+            input.value = value;
+            Object.assign(input.style, {
+                width: "65%",
+                height: "40px",
+                fontSize: "16px",
+            });
+
+            inputContainer.appendChild(label);
+            inputContainer.appendChild(input);
+            container.appendChild(inputContainer);
+        });
+    }
+}
+
+function populatePimPlmDisposition(dispositionData) {
+    const container = document.getElementById("pim-plm-disposition-container");
+    if (container) {
+        ["pim", "plm"].forEach((subKey) => {
+            const row = document.createElement("div");
+            Object.assign(row.style, {
+                display: "flex",
+                alignItems: "center",
+                gap: "20px",
+            });
+
+            const dispositionLabel = document.createElement("label");
+            dispositionLabel.innerText = `Disposition ${subKey.toUpperCase()}`;
+            dispositionLabel.style.minWidth = "150px";
+            row.appendChild(dispositionLabel);
+
+            const dispositionSelect = document.createElement("select");
+            dispositionSelect.id = `disposition-${subKey}`;
+            dispositionSelect.name = `disposition-${subKey}`;
+            Object.assign(dispositionSelect.style, {
+                width: "150px",
+                height: "40px",
+                fontSize: "16px",
+            });
+            ["Thumbs Up", "Thumbs Down"].forEach((option) => {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.text = option;
+                if (option === dispositionData.disposition[subKey]) {
+                    optionElement.selected = true;
+                }
+                dispositionSelect.appendChild(optionElement);
+            });
+            row.appendChild(dispositionSelect);
+
+            const commentsLabel = document.createElement("label");
+            commentsLabel.innerText = `Comments ${subKey.toUpperCase()}`;
+            commentsLabel.style.minWidth = "150px";
+            row.appendChild(commentsLabel);
+
+            const commentsInput = document.createElement("input");
+            commentsInput.type = "text";
+            commentsInput.id = `comments-${subKey}`;
+            commentsInput.name = `comments-${subKey}`;
+            commentsInput.value = dispositionData.comments[subKey];
+            Object.assign(commentsInput.style, {
+                width: "300px",
+                height: "40px",
+                fontSize: "16px",
+            });
+            row.appendChild(commentsInput);
+
+            container.appendChild(row);
+        });
+    }
+}
+
+function populateProductNameTable(productNameData) {
+    const table = document.getElementById("product-name-table");
+    if (table) {
+        const headerRow = document.createElement("tr");
+        headerRow.style.backgroundColor = "#f2f2f2";
+        ["Product Name", "Total", "Pass", "Fail"].forEach((headerText) => {
+            const th = document.createElement("th");
+            th.innerText = headerText;
+            Object.assign(th.style, {
+                border: "1px solid #ddd",
+                padding: "8px",
+                textAlign: "left",
+            });
+            headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        Object.entries(productNameData).forEach(([productKey, values]) => {
+            const row = document.createElement("tr");
+
+            const productCell = document.createElement("td");
+            productCell.innerText = productKey.toUpperCase();
+            Object.assign(productCell.style, {
+                border: "1px solid #ddd",
+                padding: "8px",
+            });
+            row.appendChild(productCell);
+
+            ["total", "pass", "fail"].forEach((key) => {
+                const cell = document.createElement("td");
+                const input = document.createElement("input");
+                input.type = "number";
+                input.value = values[key];
+                Object.assign(input.style, {
+                    width: "100%",
+                    padding: "6px",
+                    boxSizing: "border-box",
+                    border: "1px solid #ccc",
+                });
+                input.id = `${productKey}-${key}`;
+                cell.appendChild(input);
+                Object.assign(cell.style, {
+                    border: "1px solid #ddd",
+                    padding: "8px",
+                });
+                row.appendChild(cell);
+            });
+
+            table.appendChild(row);
+        });
+    }
+}
+
+async function fetchEditInfo() {
+    const url = new URL(window.location.href);
+    const deploymentId = url.pathname.split("/").pop();
+
+    try {
+        const deploymentInfo = await fetchDeploymentInfo(deploymentId);
+        console.log(deploymentInfo);
+
+        populateDropdown("deplStatus", deploymentInfo.status);
+        populateDropdown("autoTrig", deploymentInfo.automationTriggered);
+        populateDropdown("batsTrig", deploymentInfo.batsTriggered);
+        populateDropdown("batsPassFail", deploymentInfo.batsResult);
+
+        populateTextInput("consolidatedTxnLink", deploymentInfo.txnLink);
+        populateTextInput("lrgReportLink", deploymentInfo.lrgReportLink);
+
+        populateTransactionInputs(deploymentInfo.transactions);
+        populateEnvironmentLinks(deploymentInfo.envLinks);
+        populatePimPlmDisposition(deploymentInfo.batsReport.pimPlmDisposition);
+        populateProductNameTable(deploymentInfo.batsReport.productName);
+    } catch (error) {
+        console.error("Error fetching deployment data:", error);
+    }
+}
+
+fetchEditInfo();
+</script>
+</html>

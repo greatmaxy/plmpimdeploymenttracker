@@ -1,0 +1,131 @@
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#filterButtons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#filterButtons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#filterButtons button:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Ensures cards stack vertically */
+  gap: 20px; /* Adds space between the cards */
+  padding: 0 10px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  /* align-items: center; */
+}
+
+.status-box {
+  /* height: 30px; */
+  /* width: 100%; */
+  flex: 20%;
+}
+
+.status-failed {
+  background-color: #dc3545;
+}
+
+.status-success {
+  background-color: #28a745;
+}
+
+.status-in-progress {
+  background-color: #ffc107;
+}
+
+.details {
+  margin-bottom: 20px;
+}
+
+.actions button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #0056b3;
+}
+
+.transactions {
+  margin-top: 10px;
+}
+
+.txn-item {
+  background-color: #f8f9fa;
+  padding: 5px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.details-and-actions {
+  flex: 80%;
+  margin-left: 20px;
+}
+
+.bats-report-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+.bats-report-table2 {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.env-links-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

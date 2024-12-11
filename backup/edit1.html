@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLM PIM Deployment Tracker Edit</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Edit</h1>
+    <div id="editContainer">
+      <form>
+        <label for="depl-status"  style="border-style: solid; color: blue;">Deployment Status</label>
+        <select id="deplStatus" name="depl-status">
+            <option value="deployed">Deployed</option>
+            <option value="inProgress">In Progress</option>
+            <option value="failed">Failed</option>
+        </select>
+        <br/>
+
+        <label for="automation-trig"  style="border-style: solid; color: blue;">Automation Triggered</label>
+        <select id="autoTrig" name="automation-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-trig"  style="border-style: solid; color: blue;">Bats Triggered</label>
+        <select id="batsTrig" name="bats-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-pass-fail"  style="border-style: solid; color: blue;">Bats Passed/Failed</label>
+        <select id="batsPassFail" name="bats-pass-fail">
+            <option value="Passed">Passed</option>
+            <option value="Failed">Failed</option>
+            <option value="NA">NA</option>
+        </select>
+        
+        <br/>
+
+        <label for="consolidatedTxnLink"  style="border-style: solid; color: blue;">Consolidated Txn Link</label>
+        <input type="text" id="consolidatedTxnLink" name="consolidatedTxnLink" 
+               style="width: 60%; height: 40px; font-size: 16px;"></input>
+        
+        <br/>
+        <div style="padding-top: 10px;"></div>
+
+        <label for="lrg-report-link"  style="border-style: solid; color: blue;">LRG Report Link</label>
+        <input type="text" id="lrgReportLink" name="lrg-report-link" 
+                style="width: 65%; height: 40px; font-size: 16px;"></input>
+
+        <br/>
+        <div style="padding-top: 20px;"></div>
+
+        <div id="transactions-container">
+            <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
+            <div id="transactions-inputs"></div>
+        </div>
+
+        <div id="env-links-container">
+            <label style="border-style: solid; color: blue;">Environment Links</label>
+            <div id="env-links-inputs"></div>
+        </div>
+
+        <div id="bats-report-container">
+            <label style="border-style: solid; color: blue;">BATS Report</label>
+            <div id="pim-plm-disposition-container"></div>
+        </div>
+        
+        <div id="product-name-container">
+            <label style="border-style: solid; color: blue;">Product Name Report</label>
+            <table id="product-name-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <!-- Table will be populated dynamically -->
+            </table>
+        </div>
+
+      </form>
+    </div>
+  </body>
+  <script>
+
+        async function fetchEditInfo() {
+        const url = new URL(window.location.href);
+        const params = url.pathname;
+        const parts = params.split("/");
+        const desiredPrimaryKey = parts[parts.length - 1];
+        //console.log(desiredPart);
+        //Desired Path will look something like W48-23
+        try {
+            const response = await fetch(`/api/deployments/${desiredPrimaryKey}`);
+            if (!response.ok) {
+            throw new Error("Object not found");
+            }
+            let deploymentInfo = await response.json();
+            console.log(deploymentInfo);
+            
+            // assigning value to DOM
+            let deplStatusDropDown = document.getElementById('deplStatus');
+            deplStatusDropDown.value = deploymentInfo.status;
+
+            let automationTriggeredDropDown = document.getElementById('autoTrig');
+            automationTriggeredDropDown.value = deploymentInfo.automationTriggered;
+
+            let batsTriggeredDropDown = document.getElementById('batsTrig');
+            batsTriggeredDropDown.value = deploymentInfo.batsTriggered;
+
+            let batsPassedFailedDropDown = document.getElementById('batsPassFail');
+            batsPassedFailedDropDown.value = deploymentInfo.batsResult;
+
+
+            let consolidatedTxnLink = document.getElementById('consolidatedTxnLink');
+            consolidatedTxnLink.value = deploymentInfo.txnLink;
+
+            let lrgReportLink = document.getElementById('lrgReportLink');
+            lrgReportLink.value = deploymentInfo.lrgReportLink;
+
+            let txnList = deploymentInfo.transactions;
+            let transactionsInputsContainer = document.getElementById('transactions-inputs');
+
+            txnList.forEach((transaction, index) => {
+                let input = document.createElement('input');
+                input.type = 'text';
+                input.id = `transaction-${index}`;
+                input.name = `transaction-${index}`;
+                input.value = transaction; 
+                input.style.width = '65%';
+                input.style.height = '20px';
+                input.style.fontSize = '16px';
+                input.style.marginBottom = '10px'; 
+                transactionsInputsContainer.appendChild(input);
+            });
+
+            let envLinksInputsContainer = document.getElementById('env-links-inputs');
+
+            
+            Object.entries(deploymentInfo.envLinks).forEach(([key, value]) => {
+            
+                let inputContainer = document.createElement('div');
+                inputContainer.style.marginBottom = '10px';
+
+                
+                let label = document.createElement('label');
+                label.htmlFor = key;
+                label.innerText = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                label.style.display = 'block'; 
+                inputContainer.appendChild(label);
+
+                
+                let input = document.createElement('input');
+                input.type = 'text';
+                input.id = key;
+                input.name = key;
+                input.value = value; 
+                input.style.width = '65%';
+                input.style.height = '40px';
+                input.style.fontSize = '16px';
+
+                
+                inputContainer.appendChild(input);
+
+                
+                envLinksInputsContainer.appendChild(inputContainer);
+            });
+
+            let pimPlmDispositionContainer = document.getElementById('pim-plm-disposition-container');
+            const thumbsOptions = ["Thumbs Up", "Thumbs Down"];
+            ["pim", "plm"].forEach(subKey => {
+                // Create a row container
+                let row = document.createElement('div');
+                row.style.display = 'flex';
+                row.style.alignItems = 'center';
+                row.style.gap = '20px'; // Space between elements
+
+                // Add Disposition Label and Dropdown
+                let dispositionLabel = document.createElement('label');
+                dispositionLabel.innerText = `Disposition ${subKey.toUpperCase()}`;
+                dispositionLabel.style.minWidth = '150px'; // Label width for alignment
+                row.appendChild(dispositionLabel);
+
+                let dispositionSelect = document.createElement('select');
+                dispositionSelect.id = `disposition-${subKey}`;
+                dispositionSelect.name = `disposition-${subKey}`;
+                dispositionSelect.style.width = '150px';
+                dispositionSelect.style.height = '40px';
+                dispositionSelect.style.fontSize = '16px';
+
+                thumbsOptions.forEach(option => {
+                    let optionElement = document.createElement('option');
+                    optionElement.value = option;
+                    optionElement.text = option;
+                    if (option === deploymentInfo.batsReport.pimPlmDisposition.disposition[subKey]) {
+                        optionElement.selected = true;
+                    }
+                    dispositionSelect.appendChild(optionElement);
+                });
+                row.appendChild(dispositionSelect);
+
+                // Add Comments Label and Input
+                let commentsLabel = document.createElement('label');
+                commentsLabel.innerText = `Comments ${subKey.toUpperCase()}`;
+                commentsLabel.style.minWidth = '150px';
+                row.appendChild(commentsLabel);
+
+                let commentsInput = document.createElement('input');
+                commentsInput.type = 'text';
+                commentsInput.id = `comments-${subKey}`;
+                commentsInput.name = `comments-${subKey}`;
+                commentsInput.value = deploymentInfo.batsReport.pimPlmDisposition.comments[subKey];
+                commentsInput.style.width = '300px';
+                commentsInput.style.height = '40px';
+                commentsInput.style.fontSize = '16px';
+                row.appendChild(commentsInput);
+
+                // Append the row to the main container
+                pimPlmDispositionContainer.appendChild(row);
+            });
+
+                    // Get the table container
+            let productNameTable = document.getElementById('product-name-table');
+
+            // Add the table header
+            let headerRow = document.createElement('tr');
+            headerRow.style.backgroundColor = '#f2f2f2'; // Light background for the header
+            ['Product Name', 'Total', 'Pass', 'Fail'].forEach(headerText => {
+                let th = document.createElement('th');
+                th.innerText = headerText;
+                th.style.border = '1px solid #ddd';
+                th.style.padding = '8px';
+                th.style.textAlign = 'left';
+                headerRow.appendChild(th);
+            });
+            productNameTable.appendChild(headerRow);
+
+            // Dynamically create rows for each product key (plpm, pd, etc.)
+            Object.entries(deploymentInfo.batsReport.productName).forEach(([productKey, values]) => {
+                let row = document.createElement('tr');
+
+                // Create a cell for the product key
+                let productCell = document.createElement('td');
+                productCell.innerText = productKey.toUpperCase(); // Convert key to uppercase
+                productCell.style.border = '1px solid #ddd';
+                productCell.style.padding = '8px';
+                row.appendChild(productCell);
+
+                // Create cells for total, pass, and fail
+                ['total', 'pass', 'fail'].forEach(key => {
+                    let cell = document.createElement('td');
+                    let input = document.createElement('input');
+                    input.type = 'number';
+                    input.value = values[key]; // Set the value from the JSON
+                    input.style.width = '100%';
+                    input.style.padding = '6px';
+                    input.style.boxSizing = 'border-box';
+                    input.style.border = '1px solid #ccc';
+
+                    // Set IDs to track each input, if needed
+                    input.id = `${productKey}-${key}`;
+                    cell.appendChild(input);
+                    cell.style.border = '1px solid #ddd';
+                    cell.style.padding = '8px';
+                    row.appendChild(cell);
+                });
+
+                productNameTable.appendChild(row);
+            });
+
+        } catch (error) {
+            console.error("Error fetching deployment data:", error);
+        }
+        }
+
+        fetchEditInfo();
+
+  </script>
+
+</html>
