@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deployment Tracker</title>
+  <title>PLM PIM Deployment Tracker</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Deployment Tracker</h1>
+  <h1>PLM PIM Deployment Tracker</h1>
 
   <!-- Buttons to switch datasets -->
   <div id="filterButtons">
@@ -44,7 +44,7 @@
           <div class="card">
 
             <div class="status-box ${statusClass}"></div>
-            <div>
+            <div class="details-and-actions">
             <div class="details">
               <h2>Deployment #${deployment.id} – ${deployment.week} (${deployment.date})</h2>
               <ul>
@@ -69,6 +69,82 @@
                   .map((txn) => `<div class="txn-item">${txn}</div>`)
                   .join("")}
               </div>
+
+              <table id="bats-report-${deployment.id}" class="bats-report-table" style="display: none;">
+                <tr>
+                  <th></th>
+                  <th>PIM</th>
+                  <th>PLM</th>
+                </tr>
+                <tr>
+                  <td>Disposition</td>
+                  <td>${deployment.batsReport.pimPlmDisposition.disposition.pim}</td>
+                  <td>${deployment.batsReport.pimPlmDisposition.disposition.plm}</td>
+                </tr>
+                <tr>
+                  <td>Comments</td>
+                  <td>${deployment.batsReport.pimPlmDisposition.comments.pim}</td>
+                  <td>${deployment.batsReport.pimPlmDisposition.comments.plm}</td>
+                </tr>
+              </table>
+
+              <table id="bats-report-2-${deployment.id}" class="bats-report-table2" style="display: none;">
+                <tr>
+                  <th>Product Name</th>
+                  <th>Total</th>
+                  <th>Pass</th>
+                  <th>Fail</th>
+                </tr>
+               <tr>
+                  <th>Product Lifecycle Portfolio Managment</th>
+                  <th>${deployment.batsReport.productName.plpm.total}</th>
+                  <th>${deployment.batsReport.productName.plpm.pass}</th>
+                  <th>${deployment.batsReport.productName.plpm.fail}</th>
+                </tr>
+                <tr>
+                  <th>Product Development</th>
+                  <th>${deployment.batsReport.productName.pd.total}</th>
+                  <th>${deployment.batsReport.productName.pd.total}</th>
+                  <th>${deployment.batsReport.productName.pd.total}</th>
+                </tr>
+                 <tr>
+                  <th>Quality Issue And Action Management</th>
+                  <th>${deployment.batsReport.productName.qiam.total}</th>
+                  <th>${deployment.batsReport.productName.qiam.total}</th>
+                  <th>${deployment.batsReport.productName.qiam.total}</th>
+                </tr>
+                <tr>
+                  <th>Product Requiremnt and Ideation Management</th>
+                  <th>${deployment.batsReport.productName.prim.total}</th>
+                  <th>${deployment.batsReport.productName.prim.total}</th>
+                  <th>${deployment.batsReport.productName.prim.total}</th>
+                </tr>
+                 <tr>
+                  <th>Product Concept Design</th>
+                  <th>${deployment.batsReport.productName.pcd.total}</th>
+                  <th>${deployment.batsReport.productName.pcd.total}</th>
+                  <th>${deployment.batsReport.productName.pcd.total}</th>
+                </tr>
+              </table>
+              
+              <table id="env-links-${deployment.id}" class="env-links-table" style="display: none;">
+                <tr>
+                  <td>Environment -> Local QA Docker</td>
+                  <td><a href="${deployment.envLinks.qaDocker}" target="_blank">${deployment.envLinks.qaDocker}</a></td>
+                </tr>
+                <tr>
+                  <td>Environment ->  SCM Silver FAaaS Unlocked Opt-In – CPTAXGBQY</td>
+                  <td><a href="${deployment.envLinks.silverUnlockedOptIn}" target="_blank">${deployment.envLinks.silverUnlockedOptIn}</a></td>
+                </tr>
+                <tr>
+                  <td>Environment -> SCM Silver FAaaS Unlocked Opt-Out - CPTAZGUQY</td>
+                  <td><a href="${deployment.envLinks.silverUnlockedOptOut}" target="_blank">${deployment.envLinks.silverUnlockedOptOut}</a></td>
+                </tr>
+              </table>
+
+
+              
+
             </div>
             </div>
           </div>
@@ -81,17 +157,42 @@
     // Function to toggle the visibility of transactions
     function toggleTransactions(id) {
       const txnDiv = document.getElementById(`txn-${id}`);
+      const batsReport = document.getElementById(`bats-report-${id}`);
+      const batsReport2 = document.getElementById(`bats-report-2-${id}`);
+      const envLinks = document.getElementById(`env-links-${id}`);
       txnDiv.style.display = txnDiv.style.display === "none" ? "block" : "none";
+      batsReport.style.display = "none";
+      batsReport2.style.display = "none";
+      envLinks.style.display = "none";
     }
 
     // Placeholder for "BATS Report" button functionality
     function openReport(deploymentId) {
-      alert(`Opening BATS report for deployment #${deploymentId}...`);
+      const batsReport = document.getElementById(`bats-report-${deploymentId}`);
+      const batsReport2 = document.getElementById(`bats-report-2-${deploymentId}`);
+      const txnDiv = document.getElementById(`txn-${deploymentId}`);
+      const envLinks = document.getElementById(`env-links-${deploymentId}`);
+
+      batsReport.style.display = batsReport.style.display === "none" ? "block" : "none";
+      batsReport2.style.display = batsReport2.style.display === "none" ? "block" : "none";
+
+      txnDiv.style.display = "none";
+      envLinks.style.display = "none";
     }
 
     // Placeholder for "Available in Envs" button functionality
     function openEnvs(deploymentId) {
-      alert(`Opening available environments for deployment #${deploymentId}...`);
+
+      const batsReport = document.getElementById(`bats-report-${deploymentId}`);
+      const batsReport2 = document.getElementById(`bats-report-2-${deploymentId}`);
+      const txnDiv = document.getElementById(`txn-${deploymentId}`);
+      const envLinks = document.getElementById(`env-links-${deploymentId}`);
+
+      batsReport.style.display = "none";
+      txnDiv.style.display = "none";
+      batsReport2.style.display = "none";
+
+      envLinks.style.display = envLinks.style.display === "none" ? "block" : "none";
     }
 
     // Load the default dataset on page load
