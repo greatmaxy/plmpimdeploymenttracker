@@ -32,18 +32,34 @@
       container.innerHTML = ""; // Clear previous content
 
       deployments.forEach((deployment) => {
-        const statusClass =
-          deployment.status === "FAILED"
-            ? "status-failed"
-            : deployment.status === "SUCCESS"
-            ? "status-success"
-            : "status-in-progress";
+        let statusContent = '';
+      if (deployment.status === "FAILED") {
+        statusContent = `<div class="icon-container" style="width:80px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f10404" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
+          <path d="M12 9v4"/>
+          <path d="M12 17h.01"/>
+        </svg></div>`;
+      } else if (deployment.status === "SUCCESS") {
+        statusContent = `<div class="icon-container" style="width:80px;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#48c51b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big">
+          <path d="M21.801 10A10 10 0 1 1 17 3.335"/>
+          <path d="m9 11 3 3L22 4"/>
+        </svg>
+</div>`;
+      } else if (deployment.status === "IN_PROGRESS") {
+        statusContent = `<div class="icon-container" style="width:80px;">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f1b204" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg></div>`;
+      }
 
         // Render each deployment card
         const card = `
           <div class="card">
 
-            <div class="status-box ${statusClass}"></div>
+            ${statusContent}
+
+
             <div class="details-and-actions">
             <div class="details">
               <h2>Deployment #${deployment.id} – ${deployment.week} (${deployment.date})</h2>
