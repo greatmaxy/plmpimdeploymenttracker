@@ -7,6 +7,9 @@ const PORT = 3000;
 // Serve static files
 app.use(express.static("public"));
 
+// Middleware to parse JSON
+app.use(express.json()); 
+
 // API to serve deployments data dynamically
 app.get("/api/deployments", (req, res) => {
   const dataFile = req.query.file || "data.json"; // Default to "data.json"
@@ -55,6 +58,12 @@ app.get("/update/:id/", (req, res) => {
       res.status(500).send("An error occurred while serving the HTML file.");
     }
   });
+});
+
+app.post("/getUpdatedData", (req, res) => {
+  console.log(req);
+  const data = req.body;
+  console.log(data);
 });
 
 // Start the server

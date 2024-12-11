@@ -82,11 +82,116 @@
                 <!-- Table will be populated dynamically -->
             </table>
         </div>
-
+        
       </form>
+      <button onclick="getUpdateValues()">Update</button>
     </div>
   </body>
   <script>
+
+function getUpdateValues() {
+    const updateObject = {};
+    
+    //primaryKey
+    const url = new URL(window.location.href);
+    const deploymentId = url.pathname.split("/").pop();
+    updateObject.primaryKey = deploymentId;
+
+    //status
+    updateObject.status = document.getElementById('deplStatus').value;
+
+    //automationTriggered
+    updateObject.automationTriggered = document.getElementById('autoTrig').value;
+
+    //transactions
+    updateObject.transactions = [];
+    let transactionContainer = document.getElementById('transactions-inputs');
+    let transactionContainerInputTexts = transactionContainer.getElementsByTagName('input');
+    for(let inputText of transactionContainerInputTexts){
+        updateObject.transactions.push(inputText.value);    
+    }
+    
+    console.log(updateObject);
+
+    // posting data
+    fetch('/getUpdatedData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', // Indicates the type of data being sent
+        },
+        body: JSON.stringify(updateObject), // Convert the data to a JSON string
+        })
+        .then((response) => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then((responseData) => {
+            console.log('Success:', responseData);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+//     {
+//     "id": 23,
+//     "week": "WK48",
+//     "primaryKey":"WK48-23",
+//     "date": "11/29",
+//     "status": "inProgress",
+//     "automationTriggered": "YES",
+//     "batsTriggered": "NO",
+//     "batsResult": "NA",
+//     "txnLink": "https://orareview.us.oracle.com/149613946",
+//     "lrgReportLink": "NA",
+//     "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"],
+//     "batsReport": {
+//       "pimPlmDisposition": {
+//         "disposition": {
+//           "pim": "",
+//           "plm": "Thumbs Down"
+//         },
+//         "comments": {
+//           "pim": "NA",
+//           "plm": "Bug 12345678"
+//         } 
+//       },
+//       "productName":{
+//         "plpm":{
+//           "total":0,
+//           "pass":0,
+//           "fail":0
+//         },
+//         "pd":{
+//           "total":0,
+//           "pass":0,
+//           "fail":0
+//         },
+//         "qiam":{
+//           "total":0,
+//           "pass":0,
+//           "fail":0
+//         },
+//         "prim":{
+//           "total":0,
+//           "pass":0,
+//           "fail":0
+//         },
+//         "pcd":{
+//           "total":0,
+//           "pass":0,
+//           "fail":0
+//         }
+//       }
+//     },
+//     "envLinks":{
+//       "silverUnlockedOptIn":"http://mumbai177478.bom2.fusionappsdbom1.oraclevcn.com/superweb.html",
+//       "qaDocker":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-In_-_CPTAXGBQY",
+//       "silverUnlockedOptOut":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-Out_-_CPTAZGUQY"
+//     }
+//   }
+}
 async function fetchDeploymentInfo(deploymentId) {
     const response = await fetch(`/api/deployments/${deploymentId}`);
     if (!response.ok) {
