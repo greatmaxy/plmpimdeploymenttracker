@@ -6,6 +6,57 @@
   <title>PLM PIM Deployment Tracker</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif; /* Sets default font for the body */
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif; /* Ensures the heading uses the custom font */
+      font-weight: 600;                  /* Bold font weight for emphasis */
+      font-size: 2.5rem;                 /* Adjust the size */
+      color: #2c3e50;                    /* Professional dark gray */
+      text-align: center;                /* Center align */
+      margin: 20px 0;                    /* Add spacing around the heading */
+      letter-spacing: 1px;               /* Slightly increase letter spacing */
+    }
+    button {
+      font-family: 'Arial', sans-serif; /* Clean, modern font */
+      font-size: 1rem;                 /* Adjusted font size */
+      padding: 10px 15px;              /* Add padding for a nice size */
+      margin: 5px;                     /* Spacing between buttons */
+      border: 2px solid transparent;   /* Default border */
+      border-radius: 5px;              /* Rounded corners */
+      cursor: pointer;                 /* Pointer cursor on hover */
+      transition: all 0.3s ease;       /* Smooth transition for effects */
+    }
+
+    /* Default Button Color */
+    button {
+      background-color: #3498db;       /* Light blue background */
+      color: #ffffff;                  /* White text */
+    }
+
+    /* Hover Effect */
+    button:hover {
+      background-color: #2980b9;       /* Darker blue on hover */
+      border: 2px solid #ffffff;       /* Add a border */
+    }
+
+    /* Active/Focus State */
+    button:active,
+    button:focus {
+      background-color: #1d6fa5;       /* Even darker blue on click */
+      outline: none;                   /* Remove focus outline */
+    }
+    .card {
+      background-color: #ffffff; 
+      border-radius: 10px;  
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border: 1px solid #eaeaea;  
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
 </head>
 <body>
   <h1>PLM PIM Deployment Tracker</h1>
@@ -40,12 +91,10 @@
           <path d="M12 17h.01"/>
         </svg></div>`;
       } else if (deployment.status === "SUCCESS") {
-        statusContent = `<div class="icon-container" style="width:80px;">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#48c51b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big">
+        statusContent = `<div class="icon-container" style="width:80px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#48c51b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big">
           <path d="M21.801 10A10 10 0 1 1 17 3.335"/>
           <path d="m9 11 3 3L22 4"/>
-        </svg>
-</div>`;
+        </svg></div>`;
       } else if (deployment.status === "IN_PROGRESS") {
         statusContent = `<div class="icon-container" style="width:80px;">        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#f1b204" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
           <circle cx="12" cy="12" r="10"/>
