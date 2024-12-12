@@ -108,12 +108,7 @@ function getUpdateValues() {
     updateObject.automationTriggered = document.getElementById('autoTrig').value;
 
     //transactions
-    updateObject.transactions = [];
-    let transactionContainer = document.getElementById('transactions-inputs');
-    let transactionContainerInputTexts = transactionContainer.getElementsByTagName('input');
-    for(let inputText of transactionContainerInputTexts){
-        updateObject.transactions.push(inputText.value);    
-    }
+    updateObject.transactions = document.getElementsByClassName('editor')[0].innerHTML;
 
 
     //Bats Triggered
@@ -133,11 +128,105 @@ function getUpdateValues() {
     let envContainer = document.getElementById('env-links-container');
     let envContainerInputTexts = envContainer.getElementsByTagName('input');
     for(let inputText of envContainerInputTexts){
-        envLinksObj.inputText.id = inputText.value; 
+        envLinksObj[inputText.id] = inputText.value; 
     }
-    console.log("Env link object is");
-    console.log(envLinksObj);
+    updateObject.envLinks = envLinksObj;
     
+
+    // BATS Report
+    let dispositionPimElem = document.getElementById('disposition-pim');
+    let dispositionPimComm = document.getElementById('comments-pim');
+    let dispositionPlmElem = document.getElementById('disposition-plm');
+    let dispositionPlmComm = document.getElementById('comments-plm');
+
+    updateObject.batsReport = {
+        pimPlmDisposition: {
+            disposition: {
+                pim: 0,
+                plm: 0
+            },
+            comments: {
+                pim: "",
+                plm: ""
+            }
+        },
+        productName: {
+            plm: {
+                total: 0,
+                pass: 0,
+                fail: 0,
+            },
+            pd: {
+                total: 0,
+                pass: 0,
+                fail: 0,
+            },
+            qiam: {
+                total: 0,
+                pass: 0,
+                fail: 0,
+            },
+            prim: {
+                total: 0,
+                pass: 0,
+                fail: 0,
+            },
+            pcd: {
+                total: 0,
+                pass: 0,
+                fail: 0,
+            }
+        }
+    }
+    updateObject.batsReport.pimPlmDisposition.disposition.pim = dispositionPimElem.value;
+    updateObject.batsReport.pimPlmDisposition.disposition.plm = dispositionPlmElem.value;
+
+    updateObject.batsReport.pimPlmDisposition.comments.pim = dispositionPimComm.value;
+    updateObject.batsReport.pimPlmDisposition.disposition.plm = dispositionPlmComm.value;
+
+    let batsReportPLMTotal = document.getElementById('plpm-total');
+    let batsReportPLMPass = document.getElementById('plpm-pass');
+    let batsReportPLMFail = document.getElementById('plpm-fail');
+
+    updateObject.batsReport.productName.plm.total = batsReportPLMTotal.value;
+    updateObject.batsReport.productName.plm.pass = batsReportPLMPass.value;
+    updateObject.batsReport.productName.plm.fail = batsReportPLMFail.value;
+
+
+    let batsReportPDTotal = document.getElementById('pd-total');
+    let batsReportPDPass = document.getElementById('pd-pass');
+    let batsReportPDFail = document.getElementById('pd-fail');
+
+
+    updateObject.batsReport.productName.pd.total = batsReportPDTotal.value;
+    updateObject.batsReport.productName.pd.pass = batsReportPDPass.value;
+    updateObject.batsReport.productName.pd.fail = batsReportPDFail.value;
+
+
+    let batsReportQIAMTotal = document.getElementById('qiam-total');
+    let batsReportQIAMPass = document.getElementById('qiam-pass');
+    let batsReportQIAMFail = document.getElementById('qiam-fail');
+
+
+    updateObject.batsReport.productName.qiam.total = batsReportQIAMTotal.value;
+    updateObject.batsReport.productName.qiam.pass = batsReportQIAMPass.value;
+    updateObject.batsReport.productName.qiam.fail = batsReportQIAMFail.value;
+
+    let batsReportPRIMTotal = document.getElementById('prim-total');
+    let batsReportPRIMPass = document.getElementById('prim-pass');
+    let batsReportPRIMFail = document.getElementById('prim-fail');
+
+    updateObject.batsReport.productName.prim.total = batsReportPRIMTotal.value;
+    updateObject.batsReport.productName.prim.pass = batsReportPRIMPass.value;
+    updateObject.batsReport.productName.prim.fail = batsReportPRIMFail.value;
+
+    let batsReportPCDTotal = document.getElementById('pcd-total');
+    let batsReportPCDPass = document.getElementById('pcd-pass');
+    let batsReportPCDFail = document.getElementById('pcd-fail');
+
+    updateObject.batsReport.productName.pcd.total = batsReportPCDTotal.value;
+    updateObject.batsReport.productName.pcd.pass = batsReportPCDPass.value;
+    updateObject.batsReport.productName.pcd.fail = batsReportPCDFail.value;
 
     console.log(updateObject);
 
