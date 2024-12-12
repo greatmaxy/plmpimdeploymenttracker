@@ -61,10 +61,14 @@
         <br/>
         <div style="padding-top: 20px;"></div>
 
-        <div id="transactions-container">
+        <!-- <div id="transactions-container">
             <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
             <div id="transactions-inputs"></div>
-        </div>
+        </div> -->
+        <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
+        <div class="editor" contenteditable="true" id="transaction"></div>
+
+        <br/>
 
         <div id="env-links-container">
             <label style="border-style: solid; color: blue;">Environment Links</label>
@@ -110,7 +114,31 @@ function getUpdateValues() {
     for(let inputText of transactionContainerInputTexts){
         updateObject.transactions.push(inputText.value);    
     }
+
+
+    //Bats Triggered
+    updateObject.batsTriggered = document.getElementById('batsTrig').value;
+
+    //Bats Passed/Fail
+    updateObject.batsResult = document.getElementById('batsPassFail').value;
+
+    //Consolidated Txn link
+    updateObject.txnLink = document.getElementById('consolidatedTxnLink').value;
     
+    //Consolidated Txn link
+    updateObject.lrgReportLink = document.getElementById('lrgReportLink').value;
+
+    //Env Links
+    let envLinksObj = {};
+    let envContainer = document.getElementById('env-links-container');
+    let envContainerInputTexts = envContainer.getElementsByTagName('input');
+    for(let inputText of envContainerInputTexts){
+        envLinksObj.inputText.id = inputText.value; 
+    }
+    console.log("Env link object is");
+    console.log(envLinksObj);
+    
+
     console.log(updateObject);
 
     // posting data
@@ -211,23 +239,24 @@ function populateTextInput(elementId, value) {
 }
 
 function populateTransactionInputs(transactions) {
-    const container = document.getElementById("transactions-inputs");
-    if (container) {
-        transactions.forEach((transaction, index) => {
-            const input = document.createElement("input");
-            input.type = "text";
-            input.id = `transaction-${index}`;
-            input.name = `transaction-${index}`;
-            input.value = transaction;
-            Object.assign(input.style, {
-                width: "65%",
-                height: "20px",
-                fontSize: "16px",
-                marginBottom: "10px",
-            });
-            container.appendChild(input);
-        });
-    }
+    // const container = document.getElementById("transactions-inputs");
+    // if (container) {
+    //     transactions.forEach((transaction, index) => {
+    //         const input = document.createElement("input");
+    //         input.type = "text";
+    //         input.id = `transaction-${index}`;
+    //         input.name = `transaction-${index}`;
+    //         input.value = transaction;
+    //         Object.assign(input.style, {
+    //             width: "65%",
+    //             height: "20px",
+    //             fontSize: "16px",
+    //             marginBottom: "10px",
+    //         });
+    //         container.appendChild(input);
+    //     });
+    // }
+    document.getElementsByClassName('editor')[0].innerHTML = transactions;
 }
 
 function populateEnvironmentLinks(envLinks) {

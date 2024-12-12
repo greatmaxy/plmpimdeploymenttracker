@@ -171,3 +171,20 @@ tr:nth-child(even) {
   font-size: 20px; /* Icon size */
   margin-right: 8px; /* Spacing for an optional icon */
 }
+
+.editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.transactions {
+  border: 1px solid #ccc;
+  padding: 1px;
+  padding-bottom: 1px;
+  min-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+}

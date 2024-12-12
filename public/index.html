@@ -160,10 +160,9 @@
               <button onclick="toggleTransactions(${deployment.id})">Included Txns</button>
               <button onclick="openReport('${deployment.id}')">BATS Report</button>
               <button onclick="openEnvs('${deployment.id}')">Available in Envs</button>
+
               <div class="transactions" id="txn-${deployment.id}" style="display: none;">
-                ${deployment.transactions
-                  .map((txn) => `<div class="txn-item">${txn}</div>`)
-                  .join("")}
+              ${deployment.transactions}
               </div>
 
               <table id="bats-report-${deployment.id}" class="bats-report-table" style="display: none;">
