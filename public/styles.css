@@ -129,3 +129,45 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.status-badge {
+  padding: 4px 12px; /* Adjusts padding */
+  border-radius: 9999px; /* Makes the element fully rounded */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: 500; /* Equivalent to font-medium */
+  display: inline-block; /* Ensures it fits the content */
+}
+
+.deployment-failed {
+  background-color: #fee2e2; /* Light red background */
+  color: #b91c1c; /* Dark red text */
+}
+.in-progress {
+  background-color: #fef3c7; /* Light yellow background */
+  color: #92400e; /* Dark yellow text */
+}
+
+.deployed {
+  background-color: #d1fae5; /* Light green background */
+  color: #065f46; /* Dark green text */
+}
+.alert-box {
+  background: rgb(226, 73, 73);
+  color: #fff;
+  border-radius: 8px; /* Softer rounding */
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Adjusted padding */
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(255, 68, 68, 0.25), 0 1px 3px rgba(0, 0, 0, 0.1); /* Softer shadows */
+  gap: 10px; /* Adds spacing between content */
+  border: 1px solid rgba(255, 68, 68, 0.4); /* Optional border */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth interaction effects */
+}
+
+.alert-box .icon {
+  font-size: 20px; /* Icon size */
+  margin-right: 8px; /* Spacing for an optional icon */
+}

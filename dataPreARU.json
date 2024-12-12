@@ -1,38 +1,59 @@
 [
   {
-    "id": 18,
-    "week": "WK47",
-    "date": "11/23",
-    "status": "IN PROGRESS",
-    "automationTriggered": "Not yet",
-    "batsTriggered": "Not Yet",
-    "batsResult": "NA",
-    "txnLink": "https://orareview.us.oracle.com/149613949",
-    "lrgReportLink": "NA",
-    "transactions": ["txn-12346", "txn-67891", "txn-11224", "txn-44557", "txn-77880"]
-  },
-  {
-    "id": 17,
-    "week": "WK46",
-    "date": "11/22",
+    "id": 23,
+    "week": "WK48",
+    "primaryKey":"WK48-23",
+    "date": "11/29",
     "status": "FAILED",
-    "automationTriggered": "N",
-    "batsTriggered": "N",
+    "automationTriggered": "YES",
+    "batsTriggered": "NO",
     "batsResult": "NA",
-    "txnLink": "https://orareview.us.oracle.com/149613950",
+    "txnLink": "https://orareview.us.oracle.com/149613946",
     "lrgReportLink": "NA",
-    "transactions": ["txn-22335", "txn-33446"]
-  },
-  {
-    "id": 16,
-    "week": "WK46",
-    "date": "11/21",
-    "status": "SUCCESS",
-    "automationTriggered": "Y",
-    "batsTriggered": "Y",
-    "batsResult": "Passed",
-    "txnLink": "https://orareview.us.oracle.com/149613951",
-    "lrgReportLink": "https://lrg.oracle.com/802c38bd-b393-4b2d-8982-a30bb317e905",
-    "transactions": ["txn-55668", "txn-66779", "txn-77890"]
+    "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"],
+    "batsReport": {
+      "pimPlmDisposition": {
+        "disposition": {
+          "pim": "",
+          "plm": "Thumbs Down"
+        },
+        "comments": {
+          "pim": "NA",
+          "plm": "Bug 12345678"
+        } 
+      },
+      "productName":{
+        "plpm":{
+          "total":0,
+          "pass":0,
+          "fail":0
+        },
+        "pd":{
+          "total":0,
+          "pass":0,
+          "fail":0
+        },
+        "qiam":{
+          "total":0,
+          "pass":0,
+          "fail":0
+        },
+        "prim":{
+          "total":0,
+          "pass":0,
+          "fail":0
+        },
+        "pcd":{
+          "total":0,
+          "pass":0,
+          "fail":0
+        }
+      }
+    },
+    "envLinks":{
+      "silverUnlockedOptIn":"http://mumbai177478.bom2.fusionappsdbom1.oraclevcn.com/superweb.html",
+      "qaDocker":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-In_-_CPTAXGBQY",
+      "silverUnlockedOptOut":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-Out_-_CPTAZGUQY"
+    }
   }
 ]

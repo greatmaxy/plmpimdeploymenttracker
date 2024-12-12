@@ -11,6 +11,7 @@
     "txnLink": "https://orareview.us.oracle.com/149613946",
     "lrgReportLink": "NA",
     "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"],
+    "specialComments":"Deployment is taking a lot of time due to FMW14 Patching going on",
     "batsReport": {
       "pimPlmDisposition": {
         "disposition": {
@@ -65,6 +66,7 @@
     "automationTriggered": "YES",
     "batsTriggered": "NO",
     "batsResult": "NA",
+    "specialComments":"",
     "txnLink": "https://orareview.us.oracle.com/149613946",
     "lrgReportLink": "NA",
     "transactions": ["txn-22334", "txn-33445"],
@@ -120,6 +122,7 @@
     "primaryKey":"WK48-21",
     "status": "SUCCESS",
     "automationTriggered": "YES",
+    "specialComments":"",
     "batsTriggered": "YES",
     "batsResult": "Passed",
     "txnLink": "https://orareview.us.oracle.com/149613946",
@@ -176,6 +179,7 @@
     "date": "11/25",
     "status": "FAILED",
     "primaryKey":"WK48-20",
+    "specialComments":"",
     "automationTriggered": "YES",
     "batsTriggered": "YES",
     "batsResult": "NA",
@@ -232,6 +236,7 @@
     "week": "WK47",
     "date": "11/24",
     "primaryKey":"WK48-19",
+    "specialComments":"",
     "status": "SUCCESS",
     "automationTriggered": "YES",
     "batsTriggered": "YES",
