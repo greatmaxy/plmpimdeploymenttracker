@@ -20,6 +20,15 @@
         const now = new Date();
         updateObject.date = now;
 
+        let seriesName = document.getElementById('seriesName').value;
+        if(seriesName === "PREARU"){
+            updateObject.series = "PREARU";
+        }else if(seriesName === "ARU"){
+            updateObject.series = "ARU";
+        }else{
+            updateObject.series = "V2MIBSCPSILVER";
+        }
+
         //status
         updateObject.status = document.getElementById('deplStatus').value;
 
@@ -202,6 +211,13 @@
   <h1>Create Deployment</h1>
     <div id="editContainer">
       <form>
+        <label for="seriesName">Select Series:</label>
+        <select id="seriesName" required>
+            <option value="V2MIBSCPSILVER">V2MIBSCPSILVER</option>
+            <option value="PREARU">Prearu</option>
+            <option value="ARU">Aru</option>
+        </select>
+        <br><br>
         <label for="weekDropdown">Select Week:</label>
         <select id="weekDropdown" required>
         <option value="">-- Select Week --</option>

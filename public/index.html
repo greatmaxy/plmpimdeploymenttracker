@@ -61,8 +61,8 @@
 <body>
   <h1>PLM PIM DEPLOYMENT TRACKER</h1>
   <h3>11.13.25.04- Sprint #2024.27</h3>
-
   <!-- Buttons to switch datasets -->
+   <div id="series-name"></div>
   <div id="filterButtons">
     <button onclick="loadDeployments('V2MIBSCPSILVER')">V2MIBSCPSILVER</button>
     <button onclick="loadDeployments('PREARU')">PREARU</button>
@@ -76,6 +76,30 @@
       let dataFile = "data.json"; // Default dataset
       if (dataset === "PREARU") dataFile = "dataPreARU.json";
       if (dataset === "ARU") dataFile = "dataARU.json";
+      function updateSeriesName(dataset, text) {
+      const seriesNameElement = document.getElementById('series-name');
+      // Clear the div content
+      seriesNameElement.innerHTML = '';
+      
+      // Create the new <h1> element
+      const newElement = document.createElement('h1');
+      newElement.textContent = text;
+
+      // Append the new element to the div
+      seriesNameElement.appendChild(newElement);
+    }
+
+    // Update the series name based on the dataset
+    if (dataset === "PREARU") {
+      updateSeriesName(dataset, 'PREARU TXNs');
+    } else if (dataset === "ARU") {
+      updateSeriesName(dataset, 'ARU TXNs');
+    } else if (dataset === "V2MIBSCPSILVER") {
+      updateSeriesName(dataset, 'V2MIBSCPSILVER TXNs');
+    }
+
+
+
 
       const response = await fetch(`/api/deployments?file=${dataFile}`);
       const deployments = await response.json();
@@ -294,5 +318,6 @@
     // Load the default dataset on page load
     loadDeployments("V2MIBSCPSILVER");
   </script>
+  <div style="margin: 10px; padding-left: 10px;">Built with ❤️ by Items Team</div>
 </body>
 </html>

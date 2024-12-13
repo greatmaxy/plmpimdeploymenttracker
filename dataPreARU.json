@@ -1,16 +1,81 @@
-[
-  {
+{
+  "WK4-3": {
+    "id": "3",
+    "week": "WK4",
+    "primaryKey": "WK4-3",
+    "date": "2024-12-13T23:12:18.702Z",
+    "series": "PREARU",
+    "status": "SUCCESS",
+    "automationTriggered": "YES",
+    "transactions": "",
+    "batsTriggered": "YES",
+    "batsResult": "Passed",
+    "txnLink": "http://localhost:3000/create",
+    "lrgReportLink": "http://localhost:3000/create",
+    "envLinks": {
+      "silverUnlockedOptIn": "http://localhost:3000/create",
+      "qaDocker": "http://localhost:3000/create",
+      "silverUnlockedOptOut": "http://localhost:3000/create"
+    },
+    "batsReport": {
+      "pimPlmDisposition": {
+        "disposition": {
+          "pim": "Thumbs Up",
+          "plm": "1bug 2002"
+        },
+        "comments": {
+          "pim": "bug 122",
+          "plm": ""
+        }
+      },
+      "productName": {
+        "plpm": {
+          "total": "1",
+          "pass": "2",
+          "fail": "1"
+        },
+        "pd": {
+          "total": "2",
+          "pass": "1",
+          "fail": "12"
+        },
+        "qiam": {
+          "total": "1",
+          "pass": "2",
+          "fail": "2"
+        },
+        "prim": {
+          "total": "1",
+          "pass": "2",
+          "fail": "2"
+        },
+        "pcd": {
+          "total": "2",
+          "pass": "12",
+          "fail": ""
+        }
+      }
+    }
+  },
+  "WK48-23": {
     "id": 23,
     "week": "WK48",
-    "primaryKey":"WK48-23",
+    "primaryKey": "WK48-23",
     "date": "11/29",
+    "series": "PREARU",
     "status": "FAILED",
     "automationTriggered": "YES",
     "batsTriggered": "NO",
     "batsResult": "NA",
     "txnLink": "https://orareview.us.oracle.com/149613946",
     "lrgReportLink": "NA",
-    "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"],
+    "transactions": [
+      "txn-12345",
+      "txn-67890",
+      "txn-11223",
+      "txn-44556",
+      "txn-77889"
+    ],
     "batsReport": {
       "pimPlmDisposition": {
         "disposition": {
@@ -20,40 +85,40 @@
         "comments": {
           "pim": "NA",
           "plm": "Bug 12345678"
-        } 
+        }
       },
-      "productName":{
-        "plpm":{
-          "total":0,
-          "pass":0,
-          "fail":0
+      "productName": {
+        "plpm": {
+          "total": 0,
+          "pass": 0,
+          "fail": 0
         },
-        "pd":{
-          "total":0,
-          "pass":0,
-          "fail":0
+        "pd": {
+          "total": 0,
+          "pass": 0,
+          "fail": 0
         },
-        "qiam":{
-          "total":0,
-          "pass":0,
-          "fail":0
+        "qiam": {
+          "total": 0,
+          "pass": 0,
+          "fail": 0
         },
-        "prim":{
-          "total":0,
-          "pass":0,
-          "fail":0
+        "prim": {
+          "total": 0,
+          "pass": 0,
+          "fail": 0
         },
-        "pcd":{
-          "total":0,
-          "pass":0,
-          "fail":0
+        "pcd": {
+          "total": 0,
+          "pass": 0,
+          "fail": 0
         }
       }
     },
-    "envLinks":{
-      "silverUnlockedOptIn":"http://mumbai177478.bom2.fusionappsdbom1.oraclevcn.com/superweb.html",
-      "qaDocker":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-In_-_CPTAXGBQY",
-      "silverUnlockedOptOut":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-Out_-_CPTAZGUQY"
+    "envLinks": {
+      "silverUnlockedOptIn": "http://mumbai177478.bom2.fusionappsdbom1.oraclevcn.com/superweb.html",
+      "qaDocker": "https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-In_-_CPTAXGBQY",
+      "silverUnlockedOptOut": "https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-Out_-_CPTAZGUQY"
     }
   }
-]
+}

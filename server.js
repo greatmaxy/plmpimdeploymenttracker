@@ -62,12 +62,24 @@ app.get("/create", (req, res) => {
 
 app.post("/create", (req, res) => {
   const { week, id } = req.body; // Expect `week` and `id` in the request body
-  const dataFile = "data.json"; // Define the JSON file
-  const filePath = path.join(__dirname, dataFile);
 
   if (!week || !id) {
     return res.status(400).json({ error: "Both 'week' and 'id' are required" });
   }
+  const newData = req.body;
+  let dataFile;
+  if(newData.series === "PREARU"){
+    dataFile = "dataPreARU.json";
+  }else if(newData.series === "ARU"){
+    dataFile = "dataARU.json";
+  }else{
+    dataFile = "data.json";
+  }
+
+   // Define the JSON file
+  const filePath = path.join(__dirname, dataFile);
+
+
 
   const primaryKey = `${week}-${id}`;
   
@@ -80,7 +92,7 @@ app.post("/create", (req, res) => {
       return res.status(400).json({ error: "Key already exists" });
     }
 
-    const newData = req.body;
+    
     const newObject = {[primaryKey]: newData, ...existingData};
 
     // Write the updated data back to the file

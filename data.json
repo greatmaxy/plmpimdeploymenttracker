@@ -1,10 +1,185 @@
 {
+  "WK1-1": {
+    "id": "1",
+    "week": "WK1",
+    "primaryKey": "WK1-1",
+    "date": "2024-12-13T23:15:44.176Z",
+    "series": "V2MIBSCPSILVER",
+    "status": "SUCCESS",
+    "automationTriggered": "YES",
+    "transactions": "",
+    "batsTriggered": "YES",
+    "batsResult": "Passed",
+    "txnLink": "",
+    "lrgReportLink": "",
+    "envLinks": {
+      "silverUnlockedOptIn": "",
+      "qaDocker": "",
+      "silverUnlockedOptOut": ""
+    },
+    "batsReport": {
+      "pimPlmDisposition": {
+        "disposition": {
+          "pim": "Thumbs Up",
+          "plm": ""
+        },
+        "comments": {
+          "pim": "",
+          "plm": ""
+        }
+      },
+      "productName": {
+        "plpm": {
+          "total": "",
+          "pass": "",
+          "fail": ""
+        },
+        "pd": {
+          "total": "",
+          "pass": "",
+          "fail": ""
+        },
+        "qiam": {
+          "total": "",
+          "pass": "",
+          "fail": ""
+        },
+        "prim": {
+          "total": "",
+          "pass": "",
+          "fail": ""
+        },
+        "pcd": {
+          "total": "",
+          "pass": "",
+          "fail": ""
+        }
+      }
+    }
+  },
+  "WK1-67": {
+    "id": "67",
+    "week": "WK1",
+    "primaryKey": "WK1-67",
+    "date": "2024-12-13T23:04:24.146Z",
+    "seriesName": "V2MIBSCPSILVER",
+    "status": "SUCCESS",
+    "automationTriggered": "YES",
+    "transactions": "<table id=\"SummaryTab\" class=\"summary sortable\" style=\"font-family: Arial, sans-serif; border-width: 1px; border-style: solid; border-color: grey; border-collapse: collapse;\"><thead><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 10pt; font-weight: bold; text-align: center; background-color: rgb(204, 204, 153); color: rgb(51, 102, 153);\"><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Sl No.</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\"><input type=\"checkbox\" id=\"select_all_option\" title=\"Select records\" checked=\"\"></th><th style=\"border-color: grey; font-size: 12px;\">Num</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Show Bug</th><th style=\"border-color: grey; font-size: 12px;\">Reported</th><th style=\"border-color: grey; font-size: 12px;\">Assignee</th><th style=\"border-color: grey; font-size: 12px;\">Sev</th><th style=\"border-color: grey; font-size: 12px;\">St</th><th style=\"border-color: grey; font-size: 12px;\">CF</th><th style=\"border-color: grey; font-size: 12px;\">Product ID</th><th style=\"border-color: grey; font-size: 12px;\">Component</th><th class=\"sort_alpha\" style=\"border-color: grey; font-size: 12px;\">Comp Ver</th><th style=\"border-color: grey; font-size: 12px;\">Rep. Release</th><th style=\"border-color: grey; font-size: 12px;\">Subject</th></tr></thead><tbody id=\"data\"><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">1.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37363772\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37363772\">37363772</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37363772\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241205\" style=\"border-color: gray; padding: 1px 4px;\">05-DEC-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">8592</td><td style=\"border-color: gray; padding: 1px 4px;\">CHANGE</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">[SILVER UL] IN REDWOOD ITEM UI - ATTRIBUTES TAB, UNABLE TO EDIT ITEM ATTRIBUTES. EDIT ICON IS NOT SEEN</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">2.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37339084\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37339084\">37339084</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37339084\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241129\" style=\"border-color: gray; padding: 1px 4px;\">29-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMSwdewe</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1 (MANIFEST FILE))</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">3.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37319529\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37319529\">37319529</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37319529\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px;\">24-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMS</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"><br></td></tr></tbody></table>",
+    "batsTriggered": "YES",
+    "batsResult": "Passed",
+    "txnLink": "http://localhost:3000/update/WK48-23",
+    "lrgReportLink": "http://localhost:3000/update/WK48-23",
+    "envLinks": {
+      "silverUnlockedOptIn": "http://localhost:3000/create",
+      "qaDocker": "http://localhost:3000/create",
+      "silverUnlockedOptOut": "http://localhost:3000/create"
+    },
+    "batsReport": {
+      "pimPlmDisposition": {
+        "disposition": {
+          "pim": "Thumbs Up",
+          "plm": "http://localhost:3000/create"
+        },
+        "comments": {
+          "pim": "http://localhost:3000/create",
+          "plm": ""
+        }
+      },
+      "productName": {
+        "plpm": {
+          "total": "1",
+          "pass": "12",
+          "fail": "1"
+        },
+        "pd": {
+          "total": "2",
+          "pass": "2",
+          "fail": "2"
+        },
+        "qiam": {
+          "total": "23",
+          "pass": "4",
+          "fail": "2"
+        },
+        "prim": {
+          "total": "1",
+          "pass": "3",
+          "fail": "4"
+        },
+        "pcd": {
+          "total": "34",
+          "pass": "3",
+          "fail": "41"
+        }
+      }
+    }
+  },
+  "WK1-69": {
+    "id": "69",
+    "week": "WK1",
+    "primaryKey": "WK1-69",
+    "date": "2024-12-13T23:01:23.885Z",
+    "seriesName": "V2MIBSCPSILVER",
+    "status": "SUCCESS",
+    "automationTriggered": "YES",
+    "transactions": "<table id=\"SummaryTab\" class=\"summary sortable\" style=\"font-family: Arial, sans-serif; border-width: 1px; border-style: solid; border-color: grey; border-collapse: collapse;\"><thead><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 10pt; font-weight: bold; text-align: center; background-color: rgb(204, 204, 153); color: rgb(51, 102, 153);\"><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Sl No.</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\"><input type=\"checkbox\" id=\"select_all_option\" title=\"Select records\" checked=\"\"></th><th style=\"border-color: grey; font-size: 12px;\">Num</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Show Bug</th><th style=\"border-color: grey; font-size: 12px;\">Reported</th><th style=\"border-color: grey; font-size: 12px;\">Assignee</th><th style=\"border-color: grey; font-size: 12px;\">Sev</th><th style=\"border-color: grey; font-size: 12px;\">St</th><th style=\"border-color: grey; font-size: 12px;\">CF</th><th style=\"border-color: grey; font-size: 12px;\">Product ID</th><th style=\"border-color: grey; font-size: 12px;\">Component</th><th class=\"sort_alpha\" style=\"border-color: grey; font-size: 12px;\">Comp Ver</th><th style=\"border-color: grey; font-size: 12px;\">Rep. Release</th><th style=\"border-color: grey; font-size: 12px;\">Subject</th></tr></thead><tbody id=\"data\"><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">1.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37363772\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37363772\">37363772</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37363772\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241205\" style=\"border-color: gray; padding: 1px 4px;\">05-DEC-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">8592</td><td style=\"border-color: gray; padding: 1px 4px;\">CHANGE</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">[SILVER UL] IN REDWOOD ITEM UI - ATTRIBUTES TAB, UNABLE TO EDIT ITEM ATTRIBUTES. EDIT ICON IS NOT SEEN</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">2.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37339084\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37339084\">37339084</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37339084\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241129\" style=\"border-color: gray; padding: 1px 4px;\">29-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMSwdewe</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1 (MANIFEST FILE))</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">3.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37319529\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37319529\">37319529</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37319529\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px;\">24-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMS</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"><br></td></tr></tbody></table>",
+    "batsTriggered": "YES",
+    "batsResult": "Passed",
+    "txnLink": "http://localhost:3000/update/WK48-23",
+    "lrgReportLink": "http://localhost:3000/update/WK48-23",
+    "envLinks": {
+      "silverUnlockedOptIn": "http://localhost:3000/create",
+      "qaDocker": "http://localhost:3000/create",
+      "silverUnlockedOptOut": "http://localhost:3000/create"
+    },
+    "batsReport": {
+      "pimPlmDisposition": {
+        "disposition": {
+          "pim": "Thumbs Up",
+          "plm": "http://localhost:3000/create"
+        },
+        "comments": {
+          "pim": "http://localhost:3000/create",
+          "plm": ""
+        }
+      },
+      "productName": {
+        "plpm": {
+          "total": "1",
+          "pass": "12",
+          "fail": "1"
+        },
+        "pd": {
+          "total": "2",
+          "pass": "2",
+          "fail": "2"
+        },
+        "qiam": {
+          "total": "23",
+          "pass": "4",
+          "fail": "2"
+        },
+        "prim": {
+          "total": "1",
+          "pass": "3",
+          "fail": "4"
+        },
+        "pcd": {
+          "total": "34",
+          "pass": "3",
+          "fail": "41"
+        }
+      }
+    }
+  },
   "WK12-5": {
     "id": "5",
     "week": "WK12",
     "primaryKey": "WK12-5",
     "date": "2024-12-13T16:34:51.999Z",
     "status": "SUCCESS",
+    "series": "V2MIBSCPSILVER",
     "automationTriggered": "YES",
     "transactions": "<table id=\"SummaryTab\" class=\"summary sortable\" style=\"border-width: 1px; border-style: solid; border-color: grey; border-collapse: collapse;\"><thead><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 10pt; font-weight: bold; text-align: center; background-color: rgb(204, 204, 153); color: rgb(51, 102, 153);\"><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Sl No.</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\"><input type=\"checkbox\" id=\"select_all_option\" title=\"Select records\" checked=\"\"></th><th style=\"border-color: grey; font-size: 12px;\">Num</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Show Bug</th><th style=\"border-color: grey; font-size: 12px;\">Reported</th><th style=\"border-color: grey; font-size: 12px;\">Assignee</th><th style=\"border-color: grey; font-size: 12px;\">Sev</th><th style=\"border-color: grey; font-size: 12px;\">St</th><th style=\"border-color: grey; font-size: 12px;\">CF</th><th style=\"border-color: grey; font-size: 12px;\">Product ID</th><th style=\"border-color: grey; font-size: 12px;\">Component</th><th class=\"sort_alpha\" style=\"border-color: grey; font-size: 12px;\">Comp Ver</th><th style=\"border-color: grey; font-size: 12px;\">Rep. Release</th><th style=\"border-color: grey; font-size: 12px;\">Subject</th></tr></thead><tbody id=\"data\"><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">1.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37363772\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37363772\">37363772</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37363772\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241205\" style=\"border-color: gray; padding: 1px 4px;\">05-DEC-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">8592</td><td style=\"border-color: gray; padding: 1px 4px;\">CHANGE</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">[SILVER UL] IN REDWOOD ITEM UI - ATTRIBUTES TAB, UNABLE TO EDIT ITEM ATTRIBUTES. EDIT ICON IS NOT SEEN</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">2.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37339084\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37339084\">37339084</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37339084\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241129\" style=\"border-color: gray; padding: 1px 4px;\">29-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMSwdewe</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1 (MANIFEST FILE))</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">3.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37319529\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37319529\">37319529</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37319529\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px;\">24-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMS</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"><br></td></tr></tbody></table>",
     "batsTriggered": "YES",
@@ -61,6 +236,7 @@
     "week": "WK13",
     "primaryKey": "WK13-14",
     "status": "SUCCESS",
+    "series": "V2MIBSCPSILVER",
     "automationTriggered": "YES",
     "transactions": "<br class=\"Apple-interchange-newline\"><table id=\"SummaryTab\" class=\"summary sortable\" style=\"border-width: 1px; border-style: solid; border-color: grey; border-collapse: collapse;\"><thead><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 10pt; font-weight: bold; text-align: center; background-color: rgb(204, 204, 153); color: rgb(51, 102, 153);\"><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Sl No.</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\"><input type=\"checkbox\" id=\"select_all_option\" title=\"Select records\" checked=\"\"></th><th style=\"border-color: grey; font-size: 12px;\">Num</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Show Bug</th><th style=\"border-color: grey; font-size: 12px;\">Reported</th><th style=\"border-color: grey; font-size: 12px;\">Assignee</th><th style=\"border-color: grey; font-size: 12px;\">Sev</th><th style=\"border-color: grey; font-size: 12px;\">St</th><th style=\"border-color: grey; font-size: 12px;\">CF</th><th style=\"border-color: grey; font-size: 12px;\">Product ID</th><th style=\"border-color: grey; font-size: 12px;\">Component</th><th class=\"sort_alpha\" style=\"border-color: grey; font-size: 12px;\">Comp Ver</th><th style=\"border-color: grey; font-size: 12px;\">Rep. Release</th><th style=\"border-color: grey; font-size: 12px;\">Subject</th></tr></thead><tbody id=\"data\"><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">1.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37363772\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37363772\">37363772</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37363772\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241205\" style=\"border-color: gray; padding: 1px 4px;\">05-DEC-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">8592</td><td style=\"border-color: gray; padding: 1px 4px;\">CHANGE</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">[SILVER UL] IN REDWOOD ITEM UI - ATTRIBUTES TAB, UNABLE TO EDIT ITEM ATTRIBUTES. EDIT ICON IS NOT SEEN</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">2.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37339084\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37339084\">37339084</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37339084\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241129\" style=\"border-color: gray; padding: 1px 4px;\">29-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMSwdewe</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px; overflow-wrap: break-word; word-break: break-all;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1 (MANIFEST FILE))</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px;\">3.</td><td style=\"border-color: gray; padding: 1px 4px;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37319529\" checked=\"\"></td><td style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37319529\">37319529</a></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37319529\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px;\">24-NOV-24</td><td style=\"border-color: gray; padding: 1px 4px;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"border-color: gray; padding: 1px 4px;\">2</td><td style=\"border-color: gray; padding: 1px 4px;\">37</td><td style=\"border-color: gray; padding: 1px 4px;\">N</td><td style=\"border-color: gray; padding: 1px 4px;\">4331</td><td style=\"border-color: gray; padding: 1px 4px;\">ITEMS</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.01.0</td><td style=\"border-color: gray; padding: 1px 4px;\">11.13.25.04.0</td><td style=\"border-color: gray; padding: 1px 4px;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td align=\"center\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"><br></td><td style=\"border-color: gray; padding: 1px 4px; background-color: rgb(255, 255, 255);\"></td></tr></tbody></table>",
     "batsTriggered": "YES",
@@ -118,6 +294,7 @@
     "week": "WK3",
     "primaryKey": "WK3-6",
     "status": "FAILED",
+    "series": "V2MIBSCPSILVER",
     "automationTriggered": "NO",
     "transactions": "<br class=\"Apple-interchange-newline\"><br class=\"Apple-interchange-newline\"><table id=\"SummaryTab\" class=\"summary sortable\" style=\"border-width: 1px; border-style: solid; border-color: grey; border-collapse: collapse;\"><thead><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 10pt; font-weight: bold; text-align: center; background-color: rgb(204, 204, 153); color: rgb(51, 102, 153);\"><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Sl No.</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\"><input type=\"checkbox\" id=\"select_all_option\" title=\"Select records\" checked=\"\"></th><th style=\"border-color: grey; font-size: 12px;\">Num</th><th class=\"sorttable_nosort\" style=\"border-color: grey; font-size: 12px;\">Show Bug</th><th style=\"border-color: grey; font-size: 12px;\">Reported</th><th style=\"border-color: grey; font-size: 12px;\">Assignee</th><th style=\"border-color: grey; font-size: 12px;\">Sev</th><th style=\"border-color: grey; font-size: 12px;\">St</th><th style=\"border-color: grey; font-size: 12px;\">CF</th><th style=\"border-color: grey; font-size: 12px;\">Product ID</th><th style=\"border-color: grey; font-size: 12px;\">Component</th><th class=\"sort_alpha\" style=\"border-color: grey; font-size: 12px;\">Comp Ver</th><th style=\"border-color: grey; font-size: 12px;\">Rep. Release</th><th style=\"border-color: grey; font-size: 12px;\">Subject</th></tr></thead><tbody id=\"data\"><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"padding: 1px 4px; border-color: gray;\">1.</td><td style=\"padding: 1px 4px; border-color: gray;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37363772\" checked=\"\"></td><td style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37363772\">37363772</a></td><td align=\"center\" style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37363772\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241205\" style=\"padding: 1px 4px; border-color: gray;\">05-DEC-24</td><td style=\"padding: 1px 4px; border-color: gray;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"padding: 1px 4px; border-color: gray;\">2</td><td style=\"padding: 1px 4px; border-color: gray;\">37</td><td style=\"padding: 1px 4px; border-color: gray;\">N</td><td style=\"padding: 1px 4px; border-color: gray;\">8592</td><td style=\"padding: 1px 4px; border-color: gray;\">CHANGE</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.04.0</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.04.0</td><td style=\"padding: 1px 4px; border-color: gray; overflow-wrap: break-word; word-break: break-all;\">[SILVER UL] IN REDWOOD ITEM UI - ATTRIBUTES TAB, UNABLE TO EDIT ITEM ATTRIBUTES. EDIT ICON IS NOT SEEN</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"padding: 1px 4px; border-color: gray;\">2.</td><td style=\"padding: 1px 4px; border-color: gray;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37339084\" checked=\"\"></td><td style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37339084\">37339084</a></td><td align=\"center\" style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37339084\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241129\" style=\"padding: 1px 4px; border-color: gray;\">29-NOV-24</td><td style=\"padding: 1px 4px; border-color: gray;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"padding: 1px 4px; border-color: gray;\">2</td><td style=\"padding: 1px 4px; border-color: gray;\">37</td><td style=\"padding: 1px 4px; border-color: gray;\">N</td><td style=\"padding: 1px 4px; border-color: gray;\">4331</td><td style=\"padding: 1px 4px; border-color: gray;\">ITEMSwdewe</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.01.0</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.04.0</td><td style=\"padding: 1px 4px; border-color: gray; overflow-wrap: break-word; word-break: break-all;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1 (MANIFEST FILE))</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"padding: 1px 4px; border-color: gray;\">3.</td><td style=\"padding: 1px 4px; border-color: gray;\"><input type=\"CHECKBOX\" name=\"rptnos\" value=\"37319529\" checked=\"\"></td><td style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_edit.edit_info_top?rptno=37319529\">37319529</a></td><td align=\"center\" style=\"padding: 1px 4px; border-color: gray;\"><a href=\"https://bug.oraclecorp.com/pls/bug/webbug_print.showbug?c_rptno=37319529\" target=\"_blank\"><img src=\"https://bug.oraclecorp.com/img/view_ena.png\" alt=\"Show bug\" border=\"0\"></a></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"padding: 1px 4px; border-color: gray;\">24-NOV-24</td><td style=\"padding: 1px 4px; border-color: gray;\"><a target=\"_blank\" title=\"View Profile of jash.kadu@oracle.com\" href=\"https://bug.oraclecorp.com/pls/bug/WEBBUG_EDIT.User_Profile?p_username=JKADU\" style=\"color: black;\">JKADU</a></td><td style=\"padding: 1px 4px; border-color: gray;\">2</td><td style=\"padding: 1px 4px; border-color: gray;\">37</td><td style=\"padding: 1px 4px; border-color: gray;\">N</td><td style=\"padding: 1px 4px; border-color: gray;\">4331</td><td style=\"padding: 1px 4px; border-color: gray;\">ITEMS</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.01.0</td><td style=\"padding: 1px 4px; border-color: gray;\">11.13.25.04.0</td><td style=\"padding: 1px 4px; border-color: gray;\">P:2501:PREARU:37319440:CONSOLIDATED FIXES FOR CREATE/EDIT RW ITEMS - 1</td></tr><tr style=\"font-family: Arial, Helvetica, Geneva, sans-serif; font-size: 9pt;\"><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td align=\"center\" style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td nowrap=\"\" sorttable_customkey=\"20241124\" style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"><br></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td><td style=\"background-color: rgb(255, 255, 255); padding: 1px 4px; border-color: gray;\"></td></tr></tbody></table>",
     "batsTriggered": "NO",
@@ -177,6 +354,7 @@
     "status": "IN_PROGRESS",
     "automationTriggered": "NO",
     "batsTriggered": "YES",
+    "series": "V2MIBSCPSILVER",
     "batsResult": "NA",
     "txnLink": "https://www.google.com/",
     "lrgReportLink": "https://www.google.com/",
@@ -234,6 +412,7 @@
     "status": "FAILED",
     "automationTriggered": "YES",
     "batsTriggered": "NO",
+    "series": "V2MIBSCPSILVER",
     "batsResult": "NA",
     "specialComments": "No issues in this",
     "txnLink": "https://orareview.us.oracle.com/149613946",
@@ -292,6 +471,7 @@
     "status": "SUCCESS",
     "automationTriggered": "YES",
     "specialComments": "",
+    "series": "V2MIBSCPSILVER",
     "batsTriggered": "YES",
     "batsResult": "Passed",
     "txnLink": "https://orareview.us.oracle.com/149613946",
@@ -356,6 +536,7 @@
     "automationTriggered": "YES",
     "batsTriggered": "YES",
     "batsResult": "NA",
+    "series": "V2MIBSCPSILVER",
     "txnLink": "https://orareview.us.oracle.com/149613947",
     "lrgReportLink": "NA",
     "transactions": [
@@ -414,6 +595,7 @@
     "primaryKey": "WK48-19",
     "specialComments": "",
     "status": "SUCCESS",
+    "series": "V2MIBSCPSILVER",
     "automationTriggered": "YES",
     "batsTriggered": "YES",
     "batsResult": "Passed",
