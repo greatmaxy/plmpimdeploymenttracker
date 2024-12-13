@@ -79,11 +79,12 @@
 
       const response = await fetch(`/api/deployments?file=${dataFile}`);
       const deployments = await response.json();
+      const deploymentArray = Object.values(deployments);
 
       const container = document.getElementById("deploymentContainer");
       container.innerHTML = ""; // Clear previous content
 
-      deployments.forEach((deployment) => {
+      deploymentArray.forEach((deployment) => {
         let statusContent = '';
         let statusFilterChip = '';
         if (deployment.status === "FAILED") {
@@ -199,26 +200,26 @@
                 <tr>
                   <th>Product Development</th>
                   <th>${deployment.batsReport.productName.pd.total}</th>
-                  <th>${deployment.batsReport.productName.pd.total}</th>
-                  <th>${deployment.batsReport.productName.pd.total}</th>
+                  <th>${deployment.batsReport.productName.pd.pass}</th>
+                  <th>${deployment.batsReport.productName.pd.fail}</th>
                 </tr>
                  <tr>
                   <th>Quality Issue And Action Management</th>
                   <th>${deployment.batsReport.productName.qiam.total}</th>
-                  <th>${deployment.batsReport.productName.qiam.total}</th>
-                  <th>${deployment.batsReport.productName.qiam.total}</th>
+                  <th>${deployment.batsReport.productName.qiam.pass}</th>
+                  <th>${deployment.batsReport.productName.qiam.fail}</th>
                 </tr>
                 <tr>
                   <th>Product Requiremnt and Ideation Management</th>
                   <th>${deployment.batsReport.productName.prim.total}</th>
-                  <th>${deployment.batsReport.productName.prim.total}</th>
-                  <th>${deployment.batsReport.productName.prim.total}</th>
+                  <th>${deployment.batsReport.productName.prim.pass}</th>
+                  <th>${deployment.batsReport.productName.prim.fail}</th>
                 </tr>
                  <tr>
                   <th>Product Concept Design</th>
                   <th>${deployment.batsReport.productName.pcd.total}</th>
-                  <th>${deployment.batsReport.productName.pcd.total}</th>
-                  <th>${deployment.batsReport.productName.pcd.total}</th>
+                  <th>${deployment.batsReport.productName.pcd.pass}</th>
+                  <th>${deployment.batsReport.productName.pcd.fail}</th>
                 </tr>
               </table>
               

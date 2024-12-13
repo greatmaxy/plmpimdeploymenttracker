@@ -16,9 +16,9 @@
       <form>
         <label for="depl-status"  style="border-style: solid; color: blue;">Deployment Status</label>
         <select id="deplStatus" name="depl-status">
-            <option value="deployed">Deployed</option>
-            <option value="inProgress">In Progress</option>
-            <option value="failed">Failed</option>
+            <option value="SUCCESS">Deployed</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="FAILED">Failed</option>
         </select>
         <br/>
 
@@ -66,7 +66,7 @@
             <div id="transactions-inputs"></div>
         </div> -->
         <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
-        <div class="editor" contenteditable="true" id="transaction"></div>
+        <div class="editor" contenteditable="true" style="border-style:groove" id="transaction"></div>
 
         <br/>
 
@@ -151,7 +151,7 @@ function getUpdateValues() {
             }
         },
         productName: {
-            plm: {
+            plpm: {
                 total: 0,
                 pass: 0,
                 fail: 0,
@@ -188,9 +188,9 @@ function getUpdateValues() {
     let batsReportPLMPass = document.getElementById('plpm-pass');
     let batsReportPLMFail = document.getElementById('plpm-fail');
 
-    updateObject.batsReport.productName.plm.total = batsReportPLMTotal.value;
-    updateObject.batsReport.productName.plm.pass = batsReportPLMPass.value;
-    updateObject.batsReport.productName.plm.fail = batsReportPLMFail.value;
+    updateObject.batsReport.productName.plpm.total = batsReportPLMTotal.value;
+    updateObject.batsReport.productName.plpm.pass = batsReportPLMPass.value;
+    updateObject.batsReport.productName.plpm.fail = batsReportPLMFail.value;
 
 
     let batsReportPDTotal = document.getElementById('pd-total');
@@ -250,7 +250,7 @@ function getUpdateValues() {
         .catch((error) => {
             console.error('Error:', error);
         });
-        
+
 }
 async function fetchDeploymentInfo(deploymentId) {
     const response = await fetch(`/api/deployments/${deploymentId}`);
@@ -271,23 +271,6 @@ function populateTextInput(elementId, value) {
 }
 
 function populateTransactionInputs(transactions) {
-    // const container = document.getElementById("transactions-inputs");
-    // if (container) {
-    //     transactions.forEach((transaction, index) => {
-    //         const input = document.createElement("input");
-    //         input.type = "text";
-    //         input.id = `transaction-${index}`;
-    //         input.name = `transaction-${index}`;
-    //         input.value = transaction;
-    //         Object.assign(input.style, {
-    //             width: "65%",
-    //             height: "20px",
-    //             fontSize: "16px",
-    //             marginBottom: "10px",
-    //         });
-    //         container.appendChild(input);
-    //     });
-    // }
     document.getElementsByClassName('editor')[0].innerHTML = transactions;
 }
 

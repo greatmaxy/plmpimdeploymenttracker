@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Deployment</title>
+  <link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="styles.css" />
+  <script>
+    function getUpdateValues() {
+        const updateObject = {};
+        //week
+        updateObject.id = document.getElementById('deploymentDropdown').value;
+        updateObject.week = document.getElementById('weekDropdown').value;
+        updateObject.primaryKey = updateObject.week + '-'+ updateObject.id;
+
+        const now = new Date();
+        updateObject.date = now;
+
+        //status
+        updateObject.status = document.getElementById('deplStatus').value;
+
+        //automationTriggered
+        updateObject.automationTriggered = document.getElementById('autoTrig').value;
+
+        //transactions
+        updateObject.transactions = document.getElementsByClassName('editor')[0].innerHTML;
+
+
+        //Bats Triggered
+        updateObject.batsTriggered = document.getElementById('batsTrig').value;
+
+        //Bats Passed/Fail
+        updateObject.batsResult = document.getElementById('batsPassFail').value;
+
+        //Consolidated Txn link
+        updateObject.txnLink = document.getElementById('consolidatedTxnLink').value;
+        
+        //Consolidated Txn link
+        updateObject.lrgReportLink = document.getElementById('lrgReportLink').value;
+
+        //Env Links
+        let envLinksObj = {};
+        let envContainer = document.getElementById('env-links-container');
+        let envContainerInputTexts = envContainer.getElementsByTagName('input');
+        for(let inputText of envContainerInputTexts){
+            envLinksObj[inputText.id] = inputText.value; 
+        }
+        updateObject.envLinks = envLinksObj;
+        
+
+        // BATS Report
+        let dispositionPimElem = document.getElementById('disposition-pim');
+        let dispositionPimComm = document.getElementById('comments-pim');
+        let dispositionPlmElem = document.getElementById('disposition-plm');
+        let dispositionPlmComm = document.getElementById('comments-plm');
+
+        updateObject.batsReport = {
+            pimPlmDisposition: {
+                disposition: {
+                    pim: 0,
+                    plm: 0
+                },
+                comments: {
+                    pim: "",
+                    plm: ""
+                }
+            },
+            productName: {
+                plpm: {
+                    total: 0,
+                    pass: 0,
+                    fail: 0,
+                },
+                pd: {
+                    total: 0,
+                    pass: 0,
+                    fail: 0,
+                },
+                qiam: {
+                    total: 0,
+                    pass: 0,
+                    fail: 0,
+                },
+                prim: {
+                    total: 0,
+                    pass: 0,
+                    fail: 0,
+                },
+                pcd: {
+                    total: 0,
+                    pass: 0,
+                    fail: 0,
+                }
+            }
+        }
+        updateObject.batsReport.pimPlmDisposition.disposition.pim = dispositionPimElem.value;
+        updateObject.batsReport.pimPlmDisposition.disposition.plm = dispositionPlmElem.value;
+
+        updateObject.batsReport.pimPlmDisposition.comments.pim = dispositionPimComm.value;
+        updateObject.batsReport.pimPlmDisposition.disposition.plm = dispositionPlmComm.value;
+
+        let batsReportPLMTotal = document.getElementById('plpm-total');
+        let batsReportPLMPass = document.getElementById('plpm-pass');
+        let batsReportPLMFail = document.getElementById('plpm-fail');
+
+        updateObject.batsReport.productName.plpm.total = batsReportPLMTotal.value;
+        updateObject.batsReport.productName.plpm.pass = batsReportPLMPass.value;
+        updateObject.batsReport.productName.plpm.fail = batsReportPLMFail.value;
+
+
+        let batsReportPDTotal = document.getElementById('pd-total');
+        let batsReportPDPass = document.getElementById('pd-pass');
+        let batsReportPDFail = document.getElementById('pd-fail');
+
+
+        updateObject.batsReport.productName.pd.total = batsReportPDTotal.value;
+        updateObject.batsReport.productName.pd.pass = batsReportPDPass.value;
+        updateObject.batsReport.productName.pd.fail = batsReportPDFail.value;
+
+
+        let batsReportQIAMTotal = document.getElementById('qiam-total');
+        let batsReportQIAMPass = document.getElementById('qiam-pass');
+        let batsReportQIAMFail = document.getElementById('qiam-fail');
+
+
+        updateObject.batsReport.productName.qiam.total = batsReportQIAMTotal.value;
+        updateObject.batsReport.productName.qiam.pass = batsReportQIAMPass.value;
+        updateObject.batsReport.productName.qiam.fail = batsReportQIAMFail.value;
+
+        let batsReportPRIMTotal = document.getElementById('prim-total');
+        let batsReportPRIMPass = document.getElementById('prim-pass');
+        let batsReportPRIMFail = document.getElementById('prim-fail');
+
+        updateObject.batsReport.productName.prim.total = batsReportPRIMTotal.value;
+        updateObject.batsReport.productName.prim.pass = batsReportPRIMPass.value;
+        updateObject.batsReport.productName.prim.fail = batsReportPRIMFail.value;
+
+        let batsReportPCDTotal = document.getElementById('pcd-total');
+        let batsReportPCDPass = document.getElementById('pcd-pass');
+        let batsReportPCDFail = document.getElementById('pcd-fail');
+
+        updateObject.batsReport.productName.pcd.total = batsReportPCDTotal.value;
+        updateObject.batsReport.productName.pcd.pass = batsReportPCDPass.value;
+        updateObject.batsReport.productName.pcd.fail = batsReportPCDFail.value;
+
+        console.log(updateObject);
+
+        // posting data
+        fetch('/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Indicates the type of data being sent
+            },
+            body: JSON.stringify(updateObject), // Convert the data to a JSON string
+            })
+            .then((response) => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then((responseData) => {
+                console.log('Success:', responseData);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    }
+
+    // Function to populate dropdowns
+    function populateDropdowns() {
+      const weekDropdown = document.getElementById("weekDropdown");
+      const deploymentDropdown = document.getElementById("deploymentDropdown");
+
+      // Populate weeks (WK-1 to WK-54)
+      for (let i = 1; i <= 54; i++) {
+        const option = document.createElement("option");
+        option.value = `WK${i}`;
+        option.textContent = `WK${i}`;
+        weekDropdown.appendChild(option);
+      }
+
+      // Populate deployments (1 to 100)
+      for (let i = 1; i <= 100; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        deploymentDropdown.appendChild(option);
+      }
+    }
+
+    // Populate dropdowns on page load
+    window.onload = populateDropdowns;
+  </script>
+</head>
+<body>
+  <h1>Create Deployment</h1>
+    <div id="editContainer">
+      <form>
+        <label for="weekDropdown">Select Week:</label>
+        <select id="weekDropdown" required>
+        <option value="">-- Select Week --</option>
+        </select>
+        <br><br>
+        <label for="deploymentDropdown">Select Deployment Number:</label>
+        <select id="deploymentDropdown" required>
+        <option value="">-- Select Deployment --</option>
+        </select>
+        <br/>
+        <label for="depl-status"  style="border-style: solid; color: blue;">Deployment Status</label>
+        <select id="deplStatus" name="depl-status">
+            <option value="SUCCESS">Deployed</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="FAILED">Failed</option>
+        </select>
+        <br/>
+
+        <label for="automation-trig"  style="border-style: solid; color: blue;">Automation Triggered</label>
+        <select id="autoTrig" name="automation-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-trig"  style="border-style: solid; color: blue;">Bats Triggered</label>
+        <select id="batsTrig" name="bats-trig">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+        </select>
+
+        <br/>
+
+        <label for="bats-pass-fail"  style="border-style: solid; color: blue;">Bats Passed/Failed</label>
+        <select id="batsPassFail" name="bats-pass-fail">
+            <option value="Passed">Passed</option>
+            <option value="Failed">Failed</option>
+            <option value="NA">NA</option>
+        </select>
+        
+        <br/>
+
+        <label for="consolidatedTxnLink"  style="border-style: solid; color: blue;">Consolidated Txn Link</label>
+        <input type="text" id="consolidatedTxnLink" name="consolidatedTxnLink" 
+               style="width: 60%; height: 40px; font-size: 16px;"></input>
+        
+        <br/>
+        <div style="padding-top: 10px;"></div>
+
+        <label for="lrg-report-link"  style="border-style: solid; color: blue;">LRG Report Link</label>
+        <input type="text" id="lrgReportLink" name="lrg-report-link" 
+                style="width: 65%; height: 40px; font-size: 16px;"></input>
+
+        <br/>
+
+        <label for="transactions" style="border-style: solid; color: blue;">Transactions</label>
+        <div class="editor" contenteditable="true" style="border-style:groove" id="transaction"></div>
+
+        <div id="env-links-container">
+            <label style="border-style: solid; color: blue;">Environment Links</label>
+            <div id="env-links-inputs"><div style="margin-bottom: 10px;"><label for="silverUnlockedOptIn" style="display: block;">Silver Unlocked Opt In</label><input type="text" id="silverUnlockedOptIn" name="silverUnlockedOptIn" style="width: 65%; height: 40px; font-size: 16px;"></div><div style="margin-bottom: 10px;"><label for="qaDocker" style="display: block;">Qa Docker</label><input type="text" id="qaDocker" name="qaDocker" style="width: 65%; height: 40px; font-size: 16px;"></div><div style="margin-bottom: 10px;"><label for="silverUnlockedOptOut" style="display: block;">Silver Unlocked Opt Out</label><input type="text" id="silverUnlockedOptOut" name="silverUnlockedOptOut" style="width: 65%; height: 40px; font-size: 16px;"></div></div>
+        </div>
+        
+        <div id="bats-report-container">
+            <label style="border-style: solid; color: blue;">BATS Report</label>
+            <div id="pim-plm-disposition-container"><div style="display: flex; align-items: center; gap: 20px;"><label style="min-width: 150px;">Disposition PIM</label><select id="disposition-pim" name="disposition-pim" style="width: 150px; height: 40px; font-size: 16px;"><option value="Thumbs Up">Thumbs Up</option><option value="Thumbs Down">Thumbs Down</option></select><label style="min-width: 150px;">Comments PIM</label><input type="text" id="comments-pim" name="comments-pim" style="width: 300px; height: 40px; font-size: 16px;"></div><div style="display: flex; align-items: center; gap: 20px;"><label style="min-width: 150px;">Disposition PLM</label><select id="disposition-plm" name="disposition-plm" style="width: 150px; height: 40px; font-size: 16px;"><option value="Thumbs Up">Thumbs Up</option><option value="Thumbs Down">Thumbs Down</option></select><label style="min-width: 150px;">Comments PLM</label><input type="text" id="comments-plm" name="comments-plm" style="width: 300px; height: 40px; font-size: 16px;"></div></div>
+        </div>
+
+        <div id="product-name-container">
+            <label style="border-style: solid; color: blue;">Product Name Report</label>
+            <table id="product-name-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                <!-- Table will be populated dynamically -->
+            <tr style="background-color: rgb(242, 242, 242);"><th style="border: 1px solid rgb(221, 221, 221); padding: 8px; text-align: left;">Product Name</th><th style="border: 1px solid rgb(221, 221, 221); padding: 8px; text-align: left;">Total</th><th style="border: 1px solid rgb(221, 221, 221); padding: 8px; text-align: left;">Pass</th><th style="border: 1px solid rgb(221, 221, 221); padding: 8px; text-align: left;">Fail</th></tr><tr><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;">PLPM</td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="plpm-total" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="plpm-pass" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="plpm-fail" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td></tr><tr><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;">PD</td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pd-total" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pd-pass" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pd-fail" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td></tr><tr><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;">QIAM</td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="qiam-total" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="qiam-pass" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="qiam-fail" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td></tr><tr><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;">PRIM</td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="prim-total" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="prim-pass" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="prim-fail" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td></tr><tr><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;">PCD</td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pcd-total" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pcd-pass" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td><td style="border: 1px solid rgb(221, 221, 221); padding: 8px;"><input type="number" id="pcd-fail" style="width: 100%; padding: 6px; box-sizing: border-box; border: 1px solid rgb(204, 204, 204);"></td></tr></table>
+        </div>
+     </form>
+  <button onclick="getUpdateValues()">Create Deployment</button>
+</body>
+</html>
