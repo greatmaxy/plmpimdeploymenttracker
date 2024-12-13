@@ -250,64 +250,7 @@ function getUpdateValues() {
         .catch((error) => {
             console.error('Error:', error);
         });
-
-//     {
-//     "id": 23,
-//     "week": "WK48",
-//     "primaryKey":"WK48-23",
-//     "date": "11/29",
-//     "status": "inProgress",
-//     "automationTriggered": "YES",
-//     "batsTriggered": "NO",
-//     "batsResult": "NA",
-//     "txnLink": "https://orareview.us.oracle.com/149613946",
-//     "lrgReportLink": "NA",
-//     "transactions": ["txn-12345", "txn-67890", "txn-11223", "txn-44556", "txn-77889"],
-//     "batsReport": {
-//       "pimPlmDisposition": {
-//         "disposition": {
-//           "pim": "",
-//           "plm": "Thumbs Down"
-//         },
-//         "comments": {
-//           "pim": "NA",
-//           "plm": "Bug 12345678"
-//         } 
-//       },
-//       "productName":{
-//         "plpm":{
-//           "total":0,
-//           "pass":0,
-//           "fail":0
-//         },
-//         "pd":{
-//           "total":0,
-//           "pass":0,
-//           "fail":0
-//         },
-//         "qiam":{
-//           "total":0,
-//           "pass":0,
-//           "fail":0
-//         },
-//         "prim":{
-//           "total":0,
-//           "pass":0,
-//           "fail":0
-//         },
-//         "pcd":{
-//           "total":0,
-//           "pass":0,
-//           "fail":0
-//         }
-//       }
-//     },
-//     "envLinks":{
-//       "silverUnlockedOptIn":"http://mumbai177478.bom2.fusionappsdbom1.oraclevcn.com/superweb.html",
-//       "qaDocker":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-In_-_CPTAXGBQY",
-//       "silverUnlockedOptOut":"https://scmops.appoci.oraclecorp.com/SCM_Silver_FAaaS_Unlocked_Opt-Out_-_CPTAZGUQY"
-//     }
-//   }
+        
 }
 async function fetchDeploymentInfo(deploymentId) {
     const response = await fetch(`/api/deployments/${deploymentId}`);

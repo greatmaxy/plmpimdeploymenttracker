@@ -64,6 +64,15 @@ app.post("/getUpdatedData", (req, res) => {
   console.log(req);
   const data = req.body;
   console.log(data);
+
+  const dataFile = req.query.file || "data.json"; // Default to "data.json"
+  const filePath = path.join(__dirname, dataFile);
+
+  const data1 = fs.readFileSync(filePath, 'utf8'); // Read file on every request
+  let parseObj = JSON.parse(data1);
+  
+
+
 });
 
 // Start the server
