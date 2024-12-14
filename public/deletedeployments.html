@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Deployments</title>
+</head>
+<body>
+    <div id="deleteDeploymentsContainer">
+        <h3>Enter the information to delete from</h3>
+        <form>
+          <label for="seriesName">Select Series:</label>
+          <select id="seriesName" required>
+              <option value="V2MIBSCPSILVER">V2MIBSCPSILVER</option>
+              <option value="PREARU">Prearu</option>
+              <option value="ARU">Aru</option>
+          </select>
+          <br><br>
+          <label for="weekDropdown">Select Week:</label>
+          <select id="weekDropdown" required>
+          <option value="">-- Select Week --</option>
+          </select>
+          <br><br>
+          <label for="deploymentDropdown">Select Deployment Number:</label>
+          <select id="deploymentDropdown" required>
+          <option value="">-- Select Deployment --</option>
+          </select>
+          <br/>
+        </form>
+        <button onclick="getDeleteObjectName()">Delete Deployment</button>
+    </div>
+</body>
+<script>
+    function getDeleteObjectName(){
+        const deleteObject = {};
+        deleteObject.series = document.getElementById('seriesName').value;
+        deleteObject.week = document.getElementById('weekDropdown').value;
+        deleteObject.id = document.getElementById('deploymentDropdown').value;
+
+
+
+        // posting data
+            fetch('/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Indicates the type of data being sent
+            },
+            body: JSON.stringify(deleteObject), // Convert the data to a JSON string
+            })
+            .then((response) => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then((responseData) => {
+                console.log('Success:', responseData);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+
+        // Function to populate dropdowns
+            function populateDropdowns() {
+        const weekDropdown = document.getElementById("weekDropdown");
+        const deploymentDropdown = document.getElementById("deploymentDropdown");
+
+        // Populate weeks (WK-1 to WK-54)
+        for (let i = 1; i <= 54; i++) {
+            const option = document.createElement("option");
+            option.value = `WK${i}`;
+            option.textContent = `WK${i}`;
+            weekDropdown.appendChild(option);
+        }
+
+        // Populate deployments (1 to 100)
+        for (let i = 1; i <= 100; i++) {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            deploymentDropdown.appendChild(option);
+        }
+        }
+
+        // Populate dropdowns on page load
+        window.onload = populateDropdowns;
+</script>
+</html>

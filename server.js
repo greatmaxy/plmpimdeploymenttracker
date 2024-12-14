@@ -60,6 +60,54 @@ app.get("/create", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "create.html"));
 });
 
+// Example: Serve the deletedeployments.html file
+app.get("/delete", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "deletedeployments.html"));
+});
+
+app.post("/delete",(req,res)=>{
+  const { week, id, series } = req.body; // Expect `week` and `id` in the request body
+
+  if (!week || !id || !series) {
+    return res.status(400).json({ error: "Both 'week' and 'id' are required" });
+  }
+  const data = req.body;
+  let dataFile;
+  if(data.series === "PREARU"){
+    dataFile = "dataPreARU.json";
+  }else if(data.series === "ARU"){
+    dataFile = "dataARU.json";
+  }else{
+    dataFile = "data.json";
+  }
+
+  const filePath = path.join(__dirname, dataFile);
+  const primaryKey = `${week}-${id}`;
+  
+  try{
+        // Read the existing data
+        const existingData = JSON.parse(fs.readFileSync(filePath, "utf8"));
+
+        // Check if the key already exists
+        if (!existingData.hasOwnProperty(primaryKey)) {
+          return res.status(400).json({ error: "Deployment to be deleted doesn't exist" });
+        }
+
+        delete existingData[primaryKey];
+
+        // Write the updated data back to the file
+        fs.writeFileSync(filePath, JSON.stringify(existingData, null, 2), "utf8");
+
+        // Respond with success
+        res.json({ message: "Object deleted successfully", key: primaryKey });
+
+  }catch (err) {
+    console.error("Error while deleteing the object:", err);
+    res.status(500).json({ error: "Failed to delete the object" });
+  }
+
+})
+
 app.post("/create", (req, res) => {
   const { week, id } = req.body; // Expect `week` and `id` in the request body
 
