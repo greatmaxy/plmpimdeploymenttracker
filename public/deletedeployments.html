@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Deployments</title>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <div id="error-container"></div>
     <div id="deleteDeploymentsContainer">
         <h3>Enter the information to delete from</h3>
         <form>
@@ -49,7 +55,7 @@
             })
             .then((response) => {
                 if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(response);
                 }
                 return response.json(); // Parse the JSON response
             })
@@ -58,6 +64,7 @@
             })
             .catch((error) => {
                 console.error('Error:', error);
+                displayError(error.message); // Call the function to show the error on the screen
             });
     }
 
@@ -81,6 +88,12 @@
             option.textContent = i;
             deploymentDropdown.appendChild(option);
         }
+        }
+
+        function displayError(message) {
+            const errorContainer = document.getElementById('error-container');
+            errorContainer.textContent = message; // Set the error message
+            errorContainer.className = 'error'; // Apply error styling
         }
 
         // Populate dropdowns on page load

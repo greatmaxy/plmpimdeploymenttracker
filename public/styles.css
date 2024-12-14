@@ -188,3 +188,8 @@ tr:nth-child(even) {
   overflow-y: auto;
   background-color: #fff;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+}
